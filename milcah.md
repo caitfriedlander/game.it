@@ -1,1 +1,1 @@
-This is a merge conflict!!!!
+This is a line of text.
