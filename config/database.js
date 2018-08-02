@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //mongoose (the ODM) connecting to the correct databse in mongodb 
-mongoose.connect('mongodb://localhost/movies');
+mongoose.connect(process.env.DATABASE_URL);
 
 var db = mongoose.connection;
 
