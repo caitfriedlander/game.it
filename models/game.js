@@ -9,4 +9,4 @@ var GameSchema = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Gamwe', GameSchema);
+module.exports = mongoose.model('Game', GameSchema);
