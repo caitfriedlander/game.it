@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var GameSchema = new Schema({
     googleId: String,
-    gamuserses: [{type: Schema.Types.ObjectId, ref: 'User'}]
+    gameUsers: [{type: Schema.Types.ObjectId, ref: 'User'}]
 
 }, {
     timestamps: true
