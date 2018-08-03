@@ -1,3 +1,13 @@
 <%- include('./_partials/head') %>
 
-<%- include('./_partials/footer') %>
+    <h1>game.it</h1>
+
+    <form action='/games' method='GET'>
+        <input type='text' name='title' placeholder='Search Games'>
+        <button type='submit'>Search</button>
+        </input>
+    </form>
+    
+    <h3>make friends. play games.</h3>
+
+    <%- include('./_partials/footer') %>

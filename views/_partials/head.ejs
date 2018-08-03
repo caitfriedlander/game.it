@@ -8,8 +8,13 @@
         <nav>
             <div>
                 <ul>
+                <li>Logo</li>
+                <li>game.it</li>
                 <% if (user) { %>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="#">Search Games</a></li>
+                <li><a href='#'>Chat</a></li>
+                <li><a href='#'>Profile</a></li>
+                <li><a href='/logout'>Logout</a></li>
                 <% } else { %>
                 <li><a href="/auth/google">Login with Google</a></li>
                 <% } %>
