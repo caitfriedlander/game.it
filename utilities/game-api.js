@@ -1,15 +1,20 @@
 var request = require('request');
-var apiUrl = '//api-2445582011268.apicast.io/games/?';
+var apiUrl = 'https://api-endpoint.igdb.com/games/?';
 
 module.exports = {
     searchByTitle
 };
 
 function searchByTitle(title) {
-    var url = `${apiUrl}search=${title}&fields=*&user-key=${process.env.IGDB_TOKEN}`;
+    var url = `${apiUrl}search=${title}&fields=*`;
     return new Promise(function(resolve, reject) {
-        request(url, function(err, response, body) {
-            console.log(response);
+        request({
+            url: url,
+            headers: {
+                'user-key': process.env.IGDB_TOKEN,
+                Accept: 'application/json'
+            }
+         }, function(err, response, body) {
             resolve(JSON.parse(body));
         });
     });
