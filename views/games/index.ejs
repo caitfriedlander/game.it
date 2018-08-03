@@ -1,0 +1,9 @@
+<%- include('../_partials/head') %>
+
+<h1>Game Search Results</h1>
+
+<% gameData.forEach(function(game) { %>
+   <p><%= game.name %></p>
+<% }); %>
+
+<%- include('../_partials/footer') %>

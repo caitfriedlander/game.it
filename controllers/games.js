@@ -9,6 +9,6 @@ module.exports = {
 function searchGames(req, res, next) {
     gameApi.searchByTitle(req.query.title).then(games => {
         console.log(games);
-        res.redirect('/');
+        res.render('games/index', {gameData: games});
     });
 }
