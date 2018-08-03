@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // cors
-require('cors');
+var cors = require('cors');
 
 require('dotenv').config();
 var session = require('express-session');
