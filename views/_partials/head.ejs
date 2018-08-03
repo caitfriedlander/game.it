@@ -10,7 +10,7 @@
                 <ul>
                 <li>Logo</li>
                 <li>game.it</li>
-                <% if (user) { %>
+                <% if (typeof user == 'object' && user) { %>
                 <li><a href="#">Search Games</a></li>
                 <li><a href='#'>Chat</a></li>
                 <li><a href='#'>Profile</a></li>

@@ -15,7 +15,9 @@ function searchByTitle(title) {
                 Accept: 'application/json'
             }
          }, function(err, response, body) {
-            resolve(JSON.parse(body));
+            var gameData = JSON.parse(body);
+            // console.log(gameData);
+            resolve(gameData);
         });
     });
 };
