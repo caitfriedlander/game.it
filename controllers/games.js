@@ -58,6 +58,6 @@ function searchGames(req, res, next) {
     console.log(req.query.title);
     gameApi.searchByTitle(req.query.title).then(games => {
         console.log(games);
-        res.render('games/index', {gameData: games});
+        res.render('games/index', {gameData: games, user: req.user});
     });
 }
