@@ -5,8 +5,8 @@ var usersCtrl = require('../controllers/users');
 router.get('/', usersCtrl.index);
 router.get('/:id', usersCtrl.show);
 router.delete('/:id', usersCtrl.delete);
-router.get('/:id/beers/new', usersCtrl.newLibItem)
-router.post('/:barId/beers/:beerId', usersCtrl.addLibItem)
-router.delete('/:barId/beers/:beerId', usersCtrl.removeLibItem)
+router.get('/:id/games/new', usersCtrl.newLibItem)
+router.post('/:userId/games/:gameId', usersCtrl.addLibItem)
+router.delete('/:userId/games/:gameId', usersCtrl.removeLibItem)
 
 module.exports = router;
