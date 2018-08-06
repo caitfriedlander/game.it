@@ -5,7 +5,7 @@ var usersCtrl = require('../controllers/users');
 
 router.get('/', usersCtrl.index);
 router.get('/edit', isLoggedIn, usersCtrl.profile)
-router.get('/', usersCtrl.show);
+router.get('/library', usersCtrl.show);
 router.put('/', usersCtrl.update);
 router.delete('/:id', usersCtrl.delete);
 router.get('/:id/games/new', usersCtrl.newLibItem)
