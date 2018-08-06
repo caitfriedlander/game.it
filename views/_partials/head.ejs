@@ -35,7 +35,7 @@
             </div>
             <% } %>
 
-                <% if (typeof user != 'object' && !user) { %>
+                <% if ( typeof user === null && typeof user != 'object') { %>
                     <div class="navbar-end">
                         <div class="navbar-item is-hoverable">
                             <a href="/auth/google">Login with Google</a>
