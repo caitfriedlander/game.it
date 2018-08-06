@@ -1,8 +1,8 @@
 <%- include('../_partials/head') %>
     <h1>Chat</h1>
-    <a class="navbar-item" href="/">Back</a>
     <ul id="messages"></ul><hr>
-    <label>Your Name: <h2><%= user.name %></h2></label><input id="user-name"><br><br>
-    <label>Message:</label><textarea id="new-msg"></textarea><br><br>
+    <h2 id="user-name"><%= user.name %></h2>
+    <br>
+    <textarea id="new-msg"></textarea><br><br>
     <input type="button" id="btn-send-msg" value=" Send Message ">
 <%- include('../_partials/footer') %>
