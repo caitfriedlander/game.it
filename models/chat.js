@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var ChatSchema = new Schema({
     name: String,
     avatar: String,
-    // users: [{type: Schema.Types.ObjectID, ref: 'User'}]
+    users: [{type: Schema.Types.ObjectId, ref: 'User'}]
 }, {
     timestamps: true
 });

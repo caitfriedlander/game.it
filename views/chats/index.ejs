@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<%- include('../_partials/head') %>
     <h1>Chat</h1>
+    <a class="navbar-item" href="/">Back</a>
     <ul id="messages"></ul><hr>
-    <label>Your Name:</label><input id="user-name"><br><br>
+    <label>Your Name: <h2><%= user.name %></h2></label><input id="user-name"><br><br>
     <label>Message:</label><textarea id="new-msg"></textarea><br><br>
     <input type="button" id="btn-send-msg" value=" Send Message ">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/javascripts/app.js"></script>
-</body>
-</html>
+<%- include('../_partials/footer') %>
