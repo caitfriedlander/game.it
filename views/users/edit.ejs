@@ -3,23 +3,18 @@
     <h1>game.it</h1>
     <h2>Welcome to game.it, <%= user.name %>!</h2>
     <h3>create your profile below</h3>
-    <% if (!user.avatar) { %>
-        <img src="https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg">
-    <% } else { %>
-        <img src="<%= user.avatar %>">
-    <% } %>
+    <img src="<%= user.avatar %>">
     <form action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
         <input type="text" name="username"><br><br>
         <label>Email: </label><br>
         <input type="text" name="email"><br><br>
-        <label>Platform: </label>
-              <input id="Xbox" type="checkbox" value="Xbox">
-              <label for="Xbox">Xbox</label>
-              <input id="PS4" type="checkbox" value="PS4">
-              <label for="PS4">PS4</label>
-              <input id="PC" type="checkbox" value="PC">
-              <label for="PC">PC</label><br><br>
+        <label>Platform: </label><br><br>
+            <select name="platforms" multiple="multiple" size="3">
+                <option value="Xbox">Xbox</option>
+                <option value="PS4">PS4</option>
+                <option value="PC">PC</option>
+            </select><br><br>
         <label>Age: </label><br>
         <input type="text" name="age"><br><br>
         <label>Gender: </label><br>
