@@ -3,8 +3,6 @@ var Game = require('../models/game');
 
 module.exports = {
     index,
-    new: newUser,
-    create,
     show,
     delete: destroy,
     newLibItem,
@@ -21,22 +19,17 @@ function index(req, res, next) {
     // res.send('respond with a resource');
 }
 
-// New
-function newUser(req, res, next) {
-    res.render('users/new');
-}
+// // Create
+// function create(req, res, next) {
+//     var body = req.body;
 
-// Create
-function create(req, res, next) {
-    var body = req.body;
-
-    var user = new User(body);
-    user.save(function(err) {
-        if (err) return res.render('users/new');
-        console.log(user);
-        res.redirect('/users');
-    });
-}
+//     var user = new User(body);
+//     user.save(function(err) {
+//         if (err) return res.render('users/new');
+//         console.log(user);
+//         res.redirect('/users');
+//     });
+// }
 
 // Show
 function show(req, res, next) {
