@@ -1,10 +1,9 @@
 <%- include('../_partials/head') %>
 
     <h1>game.it</h1>
-    <h2>Users Enter Info After redirect from oAuth</h2>
-    <form action="/users" method="POST">
-        <label>Name: </label><br>
-        <input type="text" name="name"><br><br>
+    <h2>Welcome to game.it, <%= user.name %>!</h2>
+    <h3>create your profile below</h3>
+    <form action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
         <input type="text" name="username"><br><br>
         <label>Email: </label><br>
