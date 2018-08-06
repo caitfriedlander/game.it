@@ -3,23 +3,17 @@
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 5px 30px;
+}
+
+h1 {
+  font-size: 40px;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
 }
 
-.navbar {
-  display: inline;
-  background-color: #00B7FF;
-}
-
-.navbar-brand {
-  
-}
-
-li {
-  display: inline;
+.search-form {
+  margin: 20px auto;
 }
