@@ -15,14 +15,14 @@
     </div>
 
     <div class="navbar-menu">
-        <% if (typeof user == 'object' && user) { %>
+        <% if (user) { %>
             <div class="navbar-start">
                 <div class="navbar-item is-hoverable">
-                    <a href="#">Search Games</a>
+                    <a href="/">Search Games</a>
                     <div class="navbar-item is-hoverable">
                         <a href="/chats">Chat</a>
                         <div class="navbar-item is-hoverable">
-                            <a href="#">Profile</a>
+                            <a href="users/library">Profile</a>
                         </div>
                     </div>
                 </div>
@@ -33,14 +33,13 @@
                     <a href='/logout'>Logout</a>
                 </div>
             </div>
-            <% } %>
-                <% if ( typeof user === 'undefined' ) { %>
-                    <div class="navbar-end">
-                        <div class="navbar-item is-hoverable">
-                            <a href="/auth/google">Login with Google</a>
-                        </div>
-                    </div>
-                    <% } %>
+        <% } else { %>
+            <div class="navbar-end">
+                <div class="navbar-item is-hoverable">
+                    <a href="/auth/google">Login with Google</a>
+                </div>
+            </div>
+        <% } %>
 
     </div>
 </nav>
