@@ -5,7 +5,7 @@ var UserSchema = new Schema({
     googleId: String,
     name: String,
     email: String,
-    icon: String,
+    avatar: String,
     username: String,
     platforms: [{type: String, enum: ['Xbox', 'PS4', 'PC']}],
     age: Number,

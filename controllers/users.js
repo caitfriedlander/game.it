@@ -29,6 +29,7 @@ function update(req, res, next) {
 
 // Profile
 function profile(req, res, next) {
+    console.log(req.user);
     res.render('users/edit', {user: req.user});
 }
 
