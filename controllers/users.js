@@ -8,34 +8,29 @@ module.exports = {
     newLibItem,
     addLibItem,
     removeLibItem,
-    edit
+    update,
+    profile
 }
 
 // Index
 function index(req, res, next) {
-    var users = User.find({}, function(err, users) {
-        if (err) return next(err);
-        res.render('users/index', { users });
-    });
-    // res.send('respond with a resource');
+    console.log(req.user);
+    if (req.user && !req.user.username) {
+        res.redirect('/users/edit');
+    } else {
+        res.render('index', { user: req.user });
+    }
 }
 
-// Edit
-function edit(req, res, next) {
+// Update
+function update(req, res, next) {
     var params = req.params;
 }
 
-// // Create
-// function create(req, res, next) {
-//     var body = req.body;
-
-//     var user = new User(body);
-//     user.save(function(err) {
-//         if (err) return res.render('users/new');
-//         console.log(user);
-//         res.redirect('/users');
-//     });
-// }
+// Profile
+function profile(req, res, next) {
+    res.render('users/edit', {user: req.user});
+}
 
 // Show
 function show(req, res, next) {
