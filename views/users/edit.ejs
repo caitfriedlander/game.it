@@ -3,13 +3,16 @@
     <h1>game.it</h1>
     <h2>Welcome to game.it, <%= user.name %>!</h2>
     <h3>create your profile below</h3>
+    <% if (!user.avatar) { %>
+        <img src="https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg">
+    <% } else { %>
+        <img src="<%= user.avatar %>">
+    <% } %>
     <form action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
         <input type="text" name="username"><br><br>
         <label>Email: </label><br>
         <input type="text" name="email"><br><br>
-        <label>Icon Upload: </label><br>
-        <input type="text" name="icon"><br><br>
         <label>Platform: </label>
               <input id="Xbox" type="checkbox" value="Xbox">
               <label for="Xbox">Xbox</label>
