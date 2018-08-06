@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById('btn-send-msg').addEventListener('click', function () {
     socket.emit('add-message', {
-      name: userName.value,
+      name: userName.innerHTML,
       msg: newMsg.value
     });
     newMsg.value = '';
