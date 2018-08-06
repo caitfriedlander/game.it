@@ -1,3 +1,7 @@
+* {
+  font-family: 'Lilita One', cursive;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +9,17 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+.navbar {
+  display: inline;
+  background-color: #00B7FF;
+}
+
+.navbar-brand {
+  
+}
+
+li {
+  display: inline;
 }
