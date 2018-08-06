@@ -7,29 +7,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
+<nav class="navbar is-link">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">game.it</a>
+    </div>
+
+    <div class="navbar-menu">
+
+        <% if (typeof user == 'object' && user) { %>
+            <div class="navbar-start">
+                <div class="navbar-item is-hoverable">
+                    <a href="#">Search Games</a>
+                    <div class="navbar-item is-hoverable">
+                        <a href="#">Chat</a>
+                        <div class="navbar-item is-hoverable">
+                            <a href="#">Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item is-hoverable">
+                    <a href='/logout'>Logout</a>
+                </div>
+            </div>
+            <% } %>
+
+                <% if (typeof user != 'object' && !user) { %>
+                    <div class="navbar-end">
+                        <div class="navbar-item is-hoverable">
+                            <a href="/auth/google">Login with Google</a>
+                        </div>
+                    </div>
+                    <% } %>
+
+    </div>
+</nav>
 
 <body>
-    <div>
-        <br>
-        <br>
-    </div>
-    <nav class="navbar navbar-divider" role="navigation">
-        <div class="navbar-brand">
-            <ul>
-                <h1><a class="navbar-item" href="/">game.it</a></h1>
-                <h3>make friends. play games.</h3>
-                <% if (typeof user == 'object' && user) { %>
-                <li><a href="#">Search Games</a></li>
-                <li>|</li>
-                <li><a href='#'>Chat</a></li>
-                <li>|</li>
-                <li><a href='#'>Profile</a></li>
-                <li>|</li>
-                <li><a href='/logout'>Logout</a></li>
-                    <% } else { %>
-                        <li><a href="/auth/google">Login with Google</a></li>
-                <% } %>
-            </ul>
-            <hr>
-        </div>
-    </nav>
