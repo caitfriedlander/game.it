@@ -1,5 +1,6 @@
 var Chat = require('../models/chat');
 var User = require('../models/user');
+var passport = require('passport');
 
 module.exports = {
     index,
@@ -8,9 +9,11 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
-    var chats = Chat.find({}, function(err, chats) {
-        if (err) return next(err);
-        res.render('chats/index', { chats });
+    User.findById(req.session.passport.user, function(err, user) {
+        var chats = Chat.find({}, function(err, chats) {
+            if (err) return next(err);
+            res.render('chats/index', { chats, user });
+        });
     });
 }
 
