@@ -20,6 +20,11 @@ function index(req, res, next) {
     // res.send('respond with a resource');
 }
 
+// Edit
+function edit(req, res, next) {
+    var params = req.params;
+}
+
 // // Create
 // function create(req, res, next) {
 //     var body = req.body;
