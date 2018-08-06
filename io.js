@@ -1,5 +1,4 @@
 // io.js
-
 var io = require('socket.io')();
 
 // Listen for new connections from clients (socket)
