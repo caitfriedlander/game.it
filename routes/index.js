@@ -1,11 +1,8 @@
 var router = require('express').Router();
-
+var usersCtrl = require('../controllers/users');
 var passport = require('passport');
 
-router.get('/', function(req, res, next) {
-  // logic to redirect to profile creation page if !req.user.username
-  res.render('index', { user: req.user });
-});
+router.get('/', usersCtrl.index);
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
