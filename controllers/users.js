@@ -26,24 +26,16 @@ function index(req, res, next) {
 // Update
 function update(req, res, next) {
     var body = req.body;
-    console.log(req.session.passport.user);
-    // user.update({_id: req.session.passport.user}, {
-    //     username: body.username,
-    //     platforms: body.platforms,
-    //     age: body.age,
-    //     gender: body.gender,
-    //     timezone: body.timezone
-    // }, function(err) {
-    //     if (err) return (err);
-    //     res.redirect('/');
-    // })
-    User.findByIdAndUpdate(req.session.passport.user, req.body, {new: true}, function(err, user) {
+    if (!body.platforms) {
+        body.platforms = []
+    }
+    console.log('*********************************');
+    console.log(body.platforms);
+    console.log('*********************************');
+    User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
         if (err) return res.status(404).json(err);
         res.render('users/show', {user});
     });
-    // console.log('*********************************');
-    // console.log(req.body);
-    // console.log('*********************************');
     // console.log(user);
 }
 
