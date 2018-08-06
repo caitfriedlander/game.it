@@ -38,7 +38,7 @@ function create(req, res, next) {
 
 // Show
 function show(req, res, next) {
-    Game.findById(req.params.id).populate('bars').exec(function(err, game) {
+    Game.findById(req.params.id).populate('users').exec(function(err, game) {
         if (err) return res.render('games/index');
         res.render('games/show', {game});
     });
