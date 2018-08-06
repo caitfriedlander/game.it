@@ -9,7 +9,8 @@ module.exports = {
     delete: destroy,
     newLibItem,
     addLibItem,
-    removeLibItem
+    removeLibItem,
+    edit
 }
 
 // Index

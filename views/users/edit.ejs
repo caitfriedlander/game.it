@@ -1,0 +1,31 @@
+<%- include('../_partials/head') %>
+
+    <h1>game.it</h1>
+    <h2>Users Enter Info After redirect from oAuth</h2>
+    <form action="/users" method="POST">
+        <label>Name: </label><br>
+        <input type="text" name="name"><br><br>
+        <label>Username: </label><br>
+        <input type="text" name="username"><br><br>
+        <label>Email: </label><br>
+        <input type="text" name="email"><br><br>
+        <label>Icon Upload: </label><br>
+        <input type="text" name="icon"><br><br>
+        <label>Platform: </label>
+              <input id="Xbox" type="checkbox" value="Xbox">
+              <label for="Xbox">Xbox</label>
+              <input id="PS4" type="checkbox" value="PS4">
+              <label for="PS4">PS4</label>
+              <input id="PC" type="checkbox" value="PC">
+              <label for="PC">PC</label><br><br>
+        <label>Age: </label><br>
+        <input type="text" name="age"><br><br>
+        <label>Gender: </label><br>
+        <input type="text" name="gender"><br><br>
+        <label>Timezone: </label><br>
+        <input type="text" name="timezone"><br><br>
+        <input type="submit" value="Create User">
+    </form>
+
+
+<%- include('../_partials/footer') %>
