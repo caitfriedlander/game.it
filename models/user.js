@@ -12,7 +12,6 @@ var UserSchema = new Schema({
     gender: String,
     timezone: String,
     games: [{type: Schema.Types.ObjectId, ref: 'Game'}]
-
 }, {
     timestamps: true
 });
