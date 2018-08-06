@@ -7,7 +7,7 @@ var UserSchema = new Schema({
     email: String,
     avatar: String,
     username: String,
-    platforms: [{type: String, enum: ['Linux', 'Mac', 'PC (Microsoft Windows)', 'Nintendo Switch', 'PlayStation 4', 'Xbox One', 'Xbox 360', 'PlayStation 3']}],
+    platforms: [{type: String}],
     age: Number,
     gender: String,
     timezone: String,
