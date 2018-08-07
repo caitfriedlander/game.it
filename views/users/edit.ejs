@@ -6,7 +6,7 @@
     <img src="<%= user.avatar %>">
     <form action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
-        <input class="input is-info" type="text" name="username" value=<%= user.username ? user.username : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="username" value=<%= user.username ? user.username : '' %>><br><br>
         <label>Platform: </label><br><br>
         <label>PC (Microsoft Windows)</label>   
         <input type="checkbox" value="PC (Microsoft Windows)" name="platforms" <%= user.platforms.includes('PC (Microsoft Windows)') ? 'checked = checked' : '' %>><br>
@@ -26,15 +26,15 @@
         <input type="checkbox" value="Xbox 360" name="platforms" <%= user.platforms.includes('Xbox 360') ? 'checked = checked' : '' %>><br>
         <br><br>
         <label>Age: </label><br>
-        <input class="input is-info" type="text" name="age" value=<%= user.age ? user.age : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="age" value=<%= user.age ? user.age : '' %>><br><br>
         <label>Gender: </label><br>
-        <input class="input is-info" type="text" name="gender" value=<%= user.gender ? user.gender : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="gender" value=<%= user.gender ? user.gender : '' %>><br><br>
         <label>Timezone: </label><br>
-        <input class="input is-info" type="text" name="timezone" value=<%= user.timezone ? user.timezone : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="timezone" value=<%= user.timezone ? user.timezone : '' %>><br><br>
         <% if ( !user.username ) { %>
-            <button class="button is-link is-outlined is-rounded is-small" type='submit' value="Create User">Create Profile</button>
+            <button class="button is-link is-outlined is-rounded is-small edit" type='submit' value="Create User">Create Profile</button>
         <% } else { %>
-            <button class="button is-link is-outlined is-rounded is-small" type='submit' value="Create User">Update Profile</button>
+            <button class="button is-link is-outlined is-rounded is-small edit" type='submit' value="Create User">Update Profile</button>
         <% } %>
     </form>
 

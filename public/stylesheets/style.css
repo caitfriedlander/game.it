@@ -8,26 +8,52 @@ body {
 
 h1 {
   font-size: 40px;
+  color: darkblue;
+}
+
+h2 {
+  color: darkblue;
+}
+
+.property-titles {
+  color: darkblue;
+  text-decoration: underline;
 }
 
 a {
-  color: #2C60A1;
   text-decoration: underline;
-  padding-left: 10px;
+  color: #3273dc;
 }
 
-p {
-  color: #2C60A1;
+.edit-btn {
+  text-decoration: none;
+  color: #2B9EEB;
+  font-weight: normal;
 }
 
-img {
-  height: 90px;
-  width: 90px;
+p, ul, li {
+  color: #3273dc;
 }
 
 .search-form {
   width: 100%;
   height: 100px;
+}
+
+.profile-platforms{
+  display: inline;
+}
+
+/* images */
+
+.avatar {
+  height: 60px;
+  width: 60px;
+}
+
+img {
+  height: 90px;
+  width: 90px;
 }
 
 /* nav bar */
@@ -46,7 +72,7 @@ img {
 .nav-logo {
   max-width: 65px;
   max-height: 65px;
-  margin: 0px 15px;
+  margin: 0px 0px 0px 9px;
 }
 
 .navbar-color {
@@ -64,21 +90,49 @@ img {
   background-color: white;
 }
 
-/* nav bar end */
+/* buttons */
 
 .button.is-link.is-outlined {
   background-color: transparent;
   border-color: white;
   color: white;
-  margin: -62px -64px;
+  margin: -63px -64px;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
 }
 
 .button.is-link.is-outlined.search {
   background-color: transparent;
-  border-color: #3273dc;
-  color: #3273dc;
+  border-color: #2B9EEB;
+  color: #2B9EEB;
   margin: 0 auto;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
 }
+
+.button.is-link.is-outlined.show {
+  background-color: transparent;
+  border-color: #2B9EEB;
+  color: #2B9EEB;
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+}
+
+.button.is-link.is-outlined.edit {
+  background-color: transparent;
+  border-color: #2B9EEB;
+  color: #2B9EEB;
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+}
+
+/* inputs */
 
 .input.is-info, .textarea.is-info {
   display: flex;
@@ -86,6 +140,8 @@ img {
   font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 34px 15px;
+  border-width: 2px;
+  border-color: #2B9EEB;
 }
 
 .input.is-info.search, .textarea.is-info {
@@ -94,4 +150,109 @@ img {
   font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 20px 0px;
+  border-width: 2px;
+  border-color: #2B9EEB;
+}
+
+.input.is-info.edit, .textarea.is-info {
+  display: flex;
+  max-width: 300px;
+  font-family: 'Lilita One', cursive;
+  font-size: 14px;
+  margin: 0px 0px;
+  border-width: 2px;
+  border-color: #2B9EEB;
+}
+
+/* live chat */
+
+@media only screen and (max-width: 540px) {
+  .chat-sidebar {
+    display: none !important;
+  }
+  .chat-popup {
+    display: none !important;
+  }
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+.chat-sidebar {
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  right: 0px;
+  top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid rgba(29, 49, 91, .3);
+}
+
+.sidebar-name {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.sidebar-name span {
+  padding-left: 5px;
+}
+
+.sidebar-name a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-name:hover {
+  background-color: #FFFFFF;
+}
+
+.sidebar-name img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.popup-box {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: 220px;
+  height: 285px;
+  background-color: #FFFFFF;
+  width: 300px;
+  border: 1px solid rgba(29, 49, 91, .3);
+}
+
+.popup-box .popup-head {
+  background-color: #3273dC;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  clear: both;
+}
+
+.popup-box .popup-head .popup-head-left {
+  float: left;
+}
+
+.popup-box .popup-head .popup-head-right {
+  float: right;
+  opacity: 0.5;
+}
+
+.popup-box .popup-head .popup-head-right a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.popup-box .popup-messages {
+  height: 100%;
+  overflow-y: scroll;
 }

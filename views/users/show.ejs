@@ -3,21 +3,26 @@
     <h1>game.it</h1>
     <h2>User Profile Page</h2><br>
         <div id="user-info">
-            <img src="<%= user.avatar %>"><br>
-            <%= user.name %><br>
-            <%= user.age %><br>
-            <%= user.gender %><br>
-            <%= user.timezone %><br>            
+            <img class="avatar" src="<%= user.avatar %>"><br>
+            <p class="property-titles">Name:</p> 
+            <p><%= user.name %></p><br>
+            <p class="property-titles">Age:</p> 
+            <p><%= user.age %></p><br>
+            <p class="property-titles">Gender:</p> 
+            <p><%= user.gender %></p><br>
+            <p class="property-titles">Timezone:</p> 
+            <p><%= user.timezone %></p><br>            
             <% if ( user.platforms.length === 0 ) { %>
-                No platforms added yet.
+                <p>No platforms added yet.</p>
             <% } else { %>
                 <ul>
+                   <p class="property-titles">Platforms:</p>
                     <% user.platforms.forEach( function(platform) { %>
-                        <li><%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %></li>
+                        <li class="profile-platforms"><%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %></li>
                     <% }) %>
                 </ul>    
             <% } %><br>
-            <button class="button is-link is-outlined is-rounded is-small" value="Edit Profile"><a href="/users/edit">Edit Profile</a></button>
+            <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
         </div>
 
 
