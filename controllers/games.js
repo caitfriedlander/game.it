@@ -61,6 +61,8 @@ function findOrCreate(apiId) {
                         apiId,
                         title: gameData.name,
                         description: gameData.summary,
+                        platforms: gameData.platforms,
+                        releaseDate: gameData.first_release_date,
                         coverImage: (gameData.cover && gameData.cover.url) || 'https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg'
                     });
                     game.save(function(err) {

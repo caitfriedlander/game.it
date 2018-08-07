@@ -10,7 +10,9 @@ module.exports = {
     addLibItem,
     removeLibItem,
     update,
-    profile
+    edit,
+    profile,
+    showLibrary
 }
 
 // Index
@@ -29,9 +31,9 @@ function update(req, res, next) {
     if (!body.platforms) {
         body.platforms = []
     }
-    console.log('*********************************');
-    console.log(body.platforms);
-    console.log('*********************************');
+    if (!body.games) {
+        body.games = []
+    }
     User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
         if (err) return res.status(404).json(err);
         res.render('users/show', {user});
@@ -39,14 +41,22 @@ function update(req, res, next) {
     // console.log(user);
 }
 
-// Profile
-function profile(req, res, next) {
+// Edit
+function edit(req, res, next) {
     console.log(req.user);
     res.render('users/edit', {user: req.user});
 }
 
 // Show
 function show(req, res, next) {
+    User.findById(req.params.id).populate('games').exec(function(err, user) {
+        if (err) return res.render('users/index');
+        res.render('users/show', {user: user});
+    });
+}
+
+// Profile
+function profile(req, res, next) {
     User.findById(req.params.id).populate('games').exec(function(err, user) {
         if (err) return res.render('users/index');
         res.render('users/show', {user: req.user});
@@ -102,4 +112,12 @@ function removeLibItem(req, res) {
             });
         });
     })
+}
+
+// Show Library
+function showLibrary(req, res, next) {
+    User.findById(req.params.id).populate('games').exec(function(err, user) {
+        if (err) return res.render('users/show');
+        res.render('users/library', {user: req.user});
+    });
 }
