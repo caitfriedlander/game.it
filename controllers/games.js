@@ -5,7 +5,6 @@ var gameApi = require('../utilities/game-api');
 module.exports = {
     index,
     show,
-    delete: destroy,
     searchGames
 }
 
@@ -25,14 +24,6 @@ function show(req, res, next) {
     })
     .catch(function(err) {
         next(err)
-    });
-}
-
-// Delete
-function destroy(req, res, next) {
-    game.findById(req.params.id, function(err, game){
-        game.remove();
-        res.redirect('/games');
     });
 }
 
@@ -61,6 +52,8 @@ function findOrCreate(apiId) {
                         apiId,
                         title: gameData.name,
                         description: gameData.summary,
+                        platforms: gameData.platforms,
+                        releaseDate: gameData.first_release_date,
                         coverImage: (gameData.cover && gameData.cover.url) || 'https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg'
                     });
                     game.save(function(err) {

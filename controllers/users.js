@@ -5,12 +5,14 @@ var passport = require('passport');
 module.exports = {
     index,
     show,
+    update,
+    edit,
+    profile,
     delete: destroy,
     newLibItem,
     addLibItem,
     removeLibItem,
-    update,
-    profile
+    showLibrary
 }
 
 // Index
@@ -29,9 +31,9 @@ function update(req, res, next) {
     if (!body.platforms) {
         body.platforms = []
     }
-    console.log('*********************************');
-    console.log(body.platforms);
-    console.log('*********************************');
+    if (!body.games) {
+        body.games = []
+    }
     User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
         if (err) return res.status(404).json(err);
         res.render('users/show', {user});
@@ -39,14 +41,22 @@ function update(req, res, next) {
     // console.log(user);
 }
 
-// Profile
-function profile(req, res, next) {
+// Edit
+function edit(req, res, next) {
     console.log(req.user);
     res.render('users/edit', {user: req.user});
 }
 
 // Show
 function show(req, res, next) {
+    User.findById(req.params.id).populate('games').exec(function(err, user) {
+        if (err) return res.render('users/index');
+        res.render('users/show', {user: user});
+    });
+}
+
+// Profile
+function profile(req, res, next) {
     User.findById(req.params.id).populate('games').exec(function(err, user) {
         if (err) return res.render('users/index');
         res.render('users/show', {user: req.user});
@@ -80,7 +90,7 @@ function addLibItem(req, res, next) {
         user.games.push(req.params.gameId);
         user.save(() => {
             Game.findById(req.params.gameId, (err, game) => {
-                game.users.push(req.params.userId);
+                game.gameUsers.push(req.params.userId);
                 game.save(() => {
                     res.redirect(`/users/${user.id}`);
                 });
@@ -95,11 +105,19 @@ function removeLibItem(req, res) {
         user.games.remove(req.params.gameId);
         user.save(() => {
             Game.findById(req.params.gameId, (err, game) => {
-                game.users.remove(req.params.userId);
+                game.gameUsers.remove(req.params.userId);
                 game.save(() => {
                     res.redirect(`/users/${user.id}`);
                 });
             });
         });
     })
+}
+
+// Show Library
+function showLibrary(req, res, next) {
+    User.findById(req.params.id).populate('games').exec(function(err, user) {
+        if (err) return res.render('users/show');
+        res.render('users/library', {user: req.user});
+    });
 }

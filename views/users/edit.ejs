@@ -1,12 +1,14 @@
 <%- include('../_partials/head') %>
 
-    <h1>Welcome to game.it, <%= user.name %>!</h1>
+    <h2>Welcome to game.it, <%= user.username %>!</h2>
     <h3>create your profile below</h3>
     <% console.log(user.platforms) %>
     <img class="avatar" src="<%= user.avatar %>">
     <form action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
         <input class="input is-info edit" type="text" name="username" value=<%= user.username ? user.username : '' %>><br><br>
+        <label>Name: </label><br>
+        <input class="input is-info edit" type="text" name="name" value=<%= user.name ? user.name : '' %>><br><br>
         <label>Platform: </label><br><br>
         <label class="label-property">PC (Microsoft Windows)</label>   
         <input type="checkbox" value="PC (Microsoft Windows)" name="platforms" <%= user.platforms.includes('PC (Microsoft Windows)') ? 'checked = checked' : '' %>><br>
