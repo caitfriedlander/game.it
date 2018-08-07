@@ -3,7 +3,18 @@
 <h1>Game Search Results</h1>
 
 <% gameData.forEach(function(game) { %>
-   <p><%= game.name %></p>
-<% }); %>
+    <article class="media">
+        <figure class="media-left">
+                <p><img src='<%=game.cover.url %>'></p>
+        </figure>
+            <div class="media-content">
+                <div class="content">
+                    <p><a href="/games/<%= game.id %>"><%= game.name %></a></p>
+                    <%= game.release_dates[0].human %>
+                    <p><%= game.platforms %></p>
+                </div> 
+            </div>
+    </article>
+ <% }); %>
 
 <%- include('../_partials/footer') %>
