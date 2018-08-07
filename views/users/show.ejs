@@ -1,7 +1,19 @@
 <%- include('../_partials/head') %>
 
     <h1>game.it</h1>
-    <h2>User Profile Page</h2>
+    <h2>User Profile Page</h2><br>
+        <div id="user-info">
+            <%= user.name %><br>
+            <%= user.age %><br>
+            <%= user.gender %><br>
+            <%= user.timezone %><br>            
+            <% if ( user.platforms.length === 0 ) { %>
+                No platforms added yet.
+            <% } else { %>
+                <%= user.platforms %>
+            <% } %><br>
+        </div>
 
-     
-<%- include('../_partials/footer') %>
+
+<%- include('../_partials/footer') %>       
+
