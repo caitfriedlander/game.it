@@ -59,7 +59,7 @@ function show(req, res, next) {
 function profile(req, res, next) {
     User.findById(req.params.id).populate('games').exec(function(err, user) {
         if (err) return res.render('users/index');
-        res.render('users/show', {user: req.user});
+        res.render('users/show', {user: req.user, option: true});
     });
 }
 
