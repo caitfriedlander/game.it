@@ -3,6 +3,7 @@
     <h1>game.it</h1>
     <h2>User Profile Page</h2><br>
         <div id="user-info">
+            <img src="<%= user.avatar %>"><br>
             <%= user.name %><br>
             <%= user.age %><br>
             <%= user.gender %><br>
@@ -12,7 +13,9 @@
             <% } else { %>
                 <%= user.platforms %>
             <% } %><br>
+            <button class="button is-link is-outlined is-rounded is-small" value="Edit Profile"><a href="/users/edit">Edit Profile</a></button>
         </div>
+
 
 
 <%- include('../_partials/footer') %>       
