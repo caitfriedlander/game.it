@@ -18,11 +18,11 @@
         <% if (user) { %>
             <div class="navbar-start">
                 <div class="navbar-item is-hoverable">
-                    <a href="/">Search Games</a>
+                    <a class="navbar-color" href="/">Search Games</a>
                     <div class="navbar-item is-hoverable">
-                        <a href="/chats">Chat</a>
+                        <a class="navbar-color" href="/chats">Chat</a>
                         <div class="navbar-item is-hoverable">
-                            <a href="users/library">Profile</a>
+                            <a class="navbar-color" href="users/library">Profile</a>
                         </div>
                     </div>
                 </div>
@@ -30,13 +30,13 @@
 
             <div class="navbar-end">
                 <div class="navbar-item is-hoverable">
-                    <a href='/logout'>Logout</a>
+                    <a class="navbar-color" href='/logout'>Logout</a>
                 </div>
             </div>
         <% } else { %>
             <div class="navbar-end">
                 <div class="navbar-item is-hoverable">
-                    <a href="/auth/google">Login with Google</a>
+                    <a class="navbar-color" href="/auth/google">Login with Google</a>
                 </div>
             </div>
         <% } %>
