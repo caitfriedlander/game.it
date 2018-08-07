@@ -4,8 +4,6 @@ var gameApi = require('../utilities/game-api');
 
 module.exports = {
     index,
-    new: newGame,
-    create,
     show,
     delete: destroy,
     searchGames
@@ -21,32 +19,12 @@ function index(req, res, next) {
 
 // Show
 function show(req, res, next) {
-    // Game.findById(req.params.game.id).populate('users').exec(function(err, game) {
-    //     if (err) return res.render('games/index');
-    //     console.log(game);
-    //     // res.render('games/show', { game });
-    // });
-
-   gameApi.searchOneGame(req.params.id).then(game => {
-        console.log(game);
-        res.render('games/show', {gameData: game, user: req.user});
-    });
-}
-
-// New
-function newGame(req, res, next) {
-    res.render('games/new');
-};
-
-// Create
-function create(req, res, next) {
-    var body = req.body;
-
-    var game = new Game(body);
-    game.save(function(err) {
-        if (err) return res.render('games/new');
-        console.log(game);
-        res.redirect('/games')
+    findOrCreate(req.params.apiId)
+    .then(function(game) {
+        res.render('games/show', { user: req.user, game });
+    })
+    .catch(function(err) {
+        next(err)
     });
 }
 
@@ -64,5 +42,33 @@ function searchGames(req, res, next) {
     gameApi.searchByTitle(req.query.title).then(games => {
         // console.log(games);
         res.render('games/index', {gameData: games, user: req.user});
+    });
+}
+
+// Utility Functions
+
+function findOrCreate(apiId) {
+    return new Promise(function(resolve, reject) {
+        Game.findOne({apiId}).populate('users').exec(function(err, game) {
+            if (err) return reject(err);
+            if (game) {
+                resolve(game);
+            } else {
+                gameApi.searchOneGame(apiId).then(gameData => {
+                    console.log("Creating Game:");
+                    console.log(gameData);
+                    var game = new Game({
+                        apiId,
+                        title: gameData.name,
+                        description: gameData.summary,
+                        coverImage: (gameData.cover && gameData.cover.url) || 'https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg'
+                    });
+                    game.save(function(err) {
+                        if (err) return reject(err);
+                        resolve(game);
+                    });
+                });
+            }
+        });
     });
 }
