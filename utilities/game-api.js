@@ -1,5 +1,5 @@
 var request = require('request');
-var apiUrl = 'https://api-endpoint.igdb.com/games/?';
+var apiUrl = 'https://api-endpoint.igdb.com/games/';
 
 module.exports = {
     searchByTitle,
@@ -7,7 +7,7 @@ module.exports = {
 };
 
 function searchByTitle(title) {
-    var url = `${apiUrl}search=${title}&fields=*`;
+    var url = `${apiUrl}?search=${title}&fields=*`;
     return new Promise(function(resolve, reject) {
         request({
             url: url,
@@ -24,7 +24,7 @@ function searchByTitle(title) {
 };
 
 function searchOneGame(id) {
-    var url = `${apiUrl}/${id}`;
+    var url = `${apiUrl}${id}`;
     return new Promise(function(resolve, reject) {
         request({
             url: url,
@@ -33,8 +33,8 @@ function searchOneGame(id) {
                 Accept: 'application/json'
             }
          }, function(err, response, body) {
-            var gameData = JSON.parse(body);
-            console.log(gameData);
+             var gameData = JSON.parse(body)[0];
+             console.log(gameData);
             resolve(gameData);
         });
     });

@@ -15,7 +15,7 @@ module.exports = {
 function index(req, res, next) {
     var games = Game.find({}, function(err, games) {
         if (err) return next(err);
-        res.render('games/index', { games });
+        res.render('games/index', { games, user: req.user });
     });
 }
 
@@ -27,8 +27,8 @@ function show(req, res, next) {
     //     // res.render('games/show', { game });
     // });
 
-    gameApi.searchOneGame(req.query.id).then(game => {
-        // console.log(games);
+   gameApi.searchOneGame(req.params.id).then(game => {
+        console.log(game);
         res.render('games/show', {gameData: game, user: req.user});
     });
 }
