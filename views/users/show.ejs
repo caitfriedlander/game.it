@@ -1,11 +1,11 @@
 <%- include('../_partials/head', {option: option}) %>
 
     <h1>game.it</h1>
-    <h2>User Profile Page</h2><br>
+    <h2><%= user.username %></h2><br>
         <div id="user-info">
             <img class="avatar" src="<%= user.avatar %>"><br>
             <p class="property-titles">Name:</p> 
-            <p><%= user.name %></p><br>
+            <p><%= user.username %></p><br>
             <p class="property-titles">Age:</p> 
             <p><%= user.age %></p><br>
             <p class="property-titles">Gender:</p> 
@@ -24,7 +24,23 @@
             <% } %><br>
             <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
         </div>
-
+        <hr>
+        <h2>User Library:</h2>
+        <% if (user.games.length) { %>
+            <ul>
+                <% user.games.forEach(function(game){ %>
+                    <li>
+                        <h4><a href="/games/<%= game.apiId %>"><%= game.name %></a> - <small><a href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></small></h4>
+                    </li> 
+                    <% }); %>
+                    <li>
+                        <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/library">Library</a></button>
+                    </li>
+                </ul>
+                <% } else { %>
+                    <h5>User Hasn't Added Any Games Yet</h5>
+                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/library">Library</a></button>
+        <% } %>
 
 
 <%- include('../_partials/footer') %>       
