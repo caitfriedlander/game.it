@@ -4,35 +4,40 @@
 
 body {
   margin: 70px 30px;
+  background-color: #F5F5F5;
 }
 
 h1 {
-  font-size: 40px;
-  color: darkblue;
+  font-size: 32px;
+  color: #67727A;
 }
 
-h2 {
-  color: darkblue;
+h2, h3, label, strong {
+  color: #67727A;
+}
+
+h4 {
+  margin: 0px auto;
+  font-size: 40px;
+  color: white;
+}
+
+.label-property {
+  color: #9BADBC;
 }
 
 .property-titles {
-  color: darkblue;
+  color: #67727A;
   text-decoration: underline;
 }
 
 a {
   text-decoration: underline;
-  color: #3273dc;
-}
-
-.edit-btn {
-  text-decoration: none;
-  color: #2B9EEB;
-  font-weight: normal;
+  color: #67727A;
 }
 
 p, ul, li {
-  color: #3273dc;
+  color: #9BADBC;
 }
 
 .search-form {
@@ -40,15 +45,18 @@ p, ul, li {
   height: 100px;
 }
 
-.profile-platforms{
+.profile-platforms {
   display: inline;
 }
 
 /* images */
 
 .avatar {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
+  border: solid #67727A 2px;
+  border-radius: 80%;
+  margin: 10px auto;
 }
 
 img {
@@ -81,7 +89,7 @@ img {
 }
 
 .navbar-menu {
-  background-color: #3273dc;
+  background-color: #6A91AB;
   padding-left: 7px;
   padding-right: 20px;
 }
@@ -102,34 +110,67 @@ img {
   border-width: 2px;
 }
 
+.button.is-link.is-outlined:hover {
+  background-color: white;
+  border-color: white;
+  color: #6A91AB;
+}
+
 .button.is-link.is-outlined.search {
   background-color: transparent;
-  border-color: #2B9EEB;
-  color: #2B9EEB;
+  border-color: #6A91AB;
+  color: #6A91AB;
   margin: 0 auto;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
+}
+
+.button.is-link.is-outlined.search:hover {
+  background-color: #6A91AB;
+  border-color: #6A91AB;
+  color: white;
 }
 
 .button.is-link.is-outlined.show {
   background-color: transparent;
-  border-color: #2B9EEB;
-  color: #2B9EEB;
+  border-color: #6A91AB;
+  color: #6A91AB;
   margin: 0 auto;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
+.button.is-link.is-outlined.show:hover {
+  background-color: #6A91AB;
+  border-color: #6A91AB;
+}
+
 .button.is-link.is-outlined.edit {
   background-color: transparent;
-  border-color: #2B9EEB;
-  color: #2B9EEB;
+  border-color: #6A91AB;
+  color: #6A91AB;
   margin: 0 auto;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
+}
+
+.button.is-link.is-outlined.edit:hover {
+  background-color: #6A91AB;
+  border-color: #6A91AB;
+  color: white;
+}
+
+.edit-btn {
+  text-decoration: none;
+  color: #6A91AB;
+  font-weight: normal;
+}
+
+.edit-btn:hover {
+  color: white;
 }
 
 /* inputs */
@@ -141,7 +182,8 @@ img {
   font-size: 14px;
   margin: 34px 15px;
   border-width: 2px;
-  border-color: #2B9EEB;
+  border-color: white;
+  color: #9BADBC;
 }
 
 .input.is-info.search, .textarea.is-info {
@@ -151,7 +193,8 @@ img {
   font-size: 14px;
   margin: 20px 0px;
   border-width: 2px;
-  border-color: #2B9EEB;
+  border-color: #6A91AB;
+  color: #9BADBC;
 }
 
 .input.is-info.edit, .textarea.is-info {
@@ -161,10 +204,24 @@ img {
   font-size: 14px;
   margin: 0px 0px;
   border-width: 2px;
-  border-color: #2B9EEB;
+  border-color: #6A91AB;
+  color: #9BADBC;
 }
 
 /* live chat */
+
+.textarea {
+  display: block;
+  max-width: 100%;
+  min-width: 50%;
+  padding: .625em;
+  width: 50%;
+  resize: vertical;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+  border-color: #6A91AB;
+  color: #9BADBC;
+}
 
 @media only screen and (max-width: 540px) {
   .chat-sidebar {
@@ -188,6 +245,8 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border: 1px solid rgba(29, 49, 91, .3);
+  background-color: #6A91AB;
+  border-color: white;
 }
 
 .sidebar-name {
@@ -195,6 +254,7 @@ body {
   padding-right: 10px;
   margin-bottom: 4px;
   font-size: 12px;
+  color: white;
 }
 
 .sidebar-name span {
@@ -209,7 +269,7 @@ body {
 }
 
 .sidebar-name:hover {
-  background-color: #FFFFFF;
+  background-color: #363636;
 }
 
 .sidebar-name img {
@@ -226,11 +286,11 @@ body {
   height: 285px;
   background-color: #FFFFFF;
   width: 300px;
-  border: 1px solid rgba(29, 49, 91, .3);
+  border: 2px solid #6A91AB;;
 }
 
 .popup-box .popup-head {
-  background-color: #3273dC;
+  background-color: #6A91AB;
   padding: 5px;
   color: white;
   font-weight: bold;
