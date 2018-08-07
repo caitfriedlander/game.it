@@ -6,9 +6,9 @@ var GameSchema = new Schema({
     title: String,
     description: String,
     platforms: [String],
-    releaseDate: String,
+    releaseDate: Date,
     coverImage: String,
-    rating: Number,
+    publishers: [String],
     gameUsers: [{type: Schema.Types.ObjectId, ref: 'User'}]
 
 }, {
