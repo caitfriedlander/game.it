@@ -19,6 +19,20 @@ function index(req, res, next) {
     });
 }
 
+// Show
+function show(req, res, next) {
+    // Game.findById(req.params.game.id).populate('users').exec(function(err, game) {
+    //     if (err) return res.render('games/index');
+    //     console.log(game);
+    //     // res.render('games/show', { game });
+    // });
+
+    gameApi.searchOneGame(req.query.id).then(game => {
+        // console.log(games);
+        res.render('games/show', {gameData: game, user: req.user});
+    });
+}
+
 // New
 function newGame(req, res, next) {
     res.render('games/new');
@@ -36,14 +50,6 @@ function create(req, res, next) {
     });
 }
 
-// Show
-function show(req, res, next) {
-    Game.findById(req.params.id).populate('users').exec(function(err, game) {
-        if (err) return res.render('games/index');
-        res.render('games/show', {game});
-    });
-}
-
 // Delete
 function destroy(req, res, next) {
     game.findById(req.params.id, function(err, game){
@@ -53,11 +59,10 @@ function destroy(req, res, next) {
 }
 
 // Search
-
 function searchGames(req, res, next) {
-    console.log(req.query.title);
+    // console.log(req.query.title);
     gameApi.searchByTitle(req.query.title).then(games => {
-        console.log(games);
+        // console.log(games);
         res.render('games/index', {gameData: games, user: req.user});
     });
 }
