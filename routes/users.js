@@ -4,7 +4,7 @@ var passport = require('passport');
 var usersCtrl = require('../controllers/users');
 
 router.get('/', usersCtrl.index);
-router.get('/Library', usersCtrl.showLibrary);
+router.get('/library', usersCtrl.showLibrary);
 router.get('/edit', isLoggedIn, usersCtrl.edit)
 router.get('/profile', usersCtrl.profile);
 router.get('/:id', usersCtrl.show);

@@ -30,7 +30,7 @@
             <ul>
                 <% user.games.forEach(function(game){ %>
                     <li>
-                        <h4><a href="/games/<%= game.apiId %>"><%= game.name %></a> - <small><a href="/users/<%= user.id %>/games/<%= game.apiId %>?_method=DELETE" method="post">Remove Game</a></small></h4>
+                        <h4><a href="/games/<%= game.apiId %>"><%= game.name %></a> - <small><a href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></small></h4>
                     </li> 
                     <% }); %>
                     <li>

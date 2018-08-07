@@ -5,13 +5,13 @@ var passport = require('passport');
 module.exports = {
     index,
     show,
+    update,
+    edit,
+    profile,
     delete: destroy,
     newLibItem,
     addLibItem,
     removeLibItem,
-    update,
-    edit,
-    profile,
     showLibrary
 }
 
@@ -90,7 +90,7 @@ function addLibItem(req, res, next) {
         user.games.push(req.params.gameId);
         user.save(() => {
             Game.findById(req.params.gameId, (err, game) => {
-                game.users.push(req.params.userId);
+                game.gameUsers.push(req.params.userId);
                 game.save(() => {
                     res.redirect(`/users/${user.id}`);
                 });
@@ -105,7 +105,7 @@ function removeLibItem(req, res) {
         user.games.remove(req.params.gameId);
         user.save(() => {
             Game.findById(req.params.gameId, (err, game) => {
-                game.users.remove(req.params.userId);
+                game.gameUsers.remove(req.params.userId);
                 game.save(() => {
                     res.redirect(`/users/${user.id}`);
                 });

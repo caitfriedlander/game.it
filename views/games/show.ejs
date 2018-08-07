@@ -15,12 +15,14 @@
             <% }); %>
         </ul>
         <p>
-            <form action="/users/games/<%= game.apiId %>" method="post">
+            <form action="/users/<%= user._id %>/games/<%= game._id %>" method="post">
                 <button type="submit">Add To Library</button>
             </form>
         </p>
     <% } else { %>
-        <p><a href="/users/library">Add To Library</a></p>
+        <form action="/users/<%= user._id %>/games/<%= game._id %>" method="post">
+            <button type="submit">Add To Library</button>
+        </form>
     <% } %>
 
 <%- include('../_partials/footer') %>

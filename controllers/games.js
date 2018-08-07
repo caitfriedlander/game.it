@@ -5,7 +5,6 @@ var gameApi = require('../utilities/game-api');
 module.exports = {
     index,
     show,
-    delete: destroy,
     searchGames
 }
 
@@ -25,14 +24,6 @@ function show(req, res, next) {
     })
     .catch(function(err) {
         next(err)
-    });
-}
-
-// Delete
-function destroy(req, res, next) {
-    game.findById(req.params.id, function(err, game){
-        game.remove();
-        res.redirect('/games');
     });
 }
 
