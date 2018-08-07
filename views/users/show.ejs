@@ -11,7 +11,11 @@
             <% if ( user.platforms.length === 0 ) { %>
                 No platforms added yet.
             <% } else { %>
-                <%= user.platforms %>
+                <ul>
+                    <% user.platforms.forEach( function(platform) { %>
+                        <li><%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %></li>
+                    <% }) %>
+                </ul>    
             <% } %><br>
             <button class="button is-link is-outlined is-rounded is-small" value="Edit Profile"><a href="/users/edit">Edit Profile</a></button>
         </div>

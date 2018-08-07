@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 5px 30px;
+  margin: 70px 30px;
 }
 
 h1 {
@@ -11,11 +11,23 @@ h1 {
 }
 
 a {
-  color: black;
+  color: #2C60A1;
+  text-decoration: underline;
+  padding-left: 10px;
+}
+
+p {
+  color: #2C60A1;
+}
+
+img {
+  height: 90px;
+  width: 90px;
 }
 
 .search-form {
   width: 100%;
+  height: 100px;
 }
 
 /* nav bar */
@@ -26,29 +38,46 @@ a {
 }
 
 .navbar {
-  min-height: 3.25rem;
-  max-height: 3.25rem;
+  min-height: 4rem;
+  max-height: 4rem;
+  position: static;
 }
 
 .nav-logo {
-  width: 50px;
-  height: 50px;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 65px;
+  max-height: 65px;
   margin: 0px 15px;
 }
 
 .navbar-color {
   color: white;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  background-color: #3273dc;
+  padding-left: 7px;
+  padding-right: 20px;
+}
+
+.navbar-brand {
+  background-color: white;
 }
 
 /* nav bar end */
 
 .button.is-link.is-outlined {
   background-color: transparent;
+  border-color: white;
+  color: white;
+  margin: -62px -64px;
+}
+
+.button.is-link.is-outlined.search {
+  background-color: transparent;
   border-color: #3273dc;
   color: #3273dc;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 .input.is-info, .textarea.is-info {
@@ -56,4 +85,13 @@ a {
   max-width: 300px;
   font-family: 'Lilita One', cursive;
   font-size: 14px;
+  margin: 34px 15px;
+}
+
+.input.is-info.search, .textarea.is-info {
+  display: flex;
+  max-width: 300px;
+  font-family: 'Lilita One', cursive;
+  font-size: 14px;
+  margin: 20px 0px;
 }

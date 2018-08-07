@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
-<nav class="navbar is-link">
+<nav class="navbar is-success is-fixed-top">
     <div class="navbar-brand">
         <a href="/">
             <img class="nav-logo" src="https://i.imgur.com/Kr52iDO.png" alt="game.it: find friends. play games.">
@@ -30,17 +30,24 @@
 
             <div class="navbar-end">
                 <div class="navbar-item is-hoverable">
+                    <form class='search-form' action='/games/search' method='GET'>
+                        <input class="input is-info" type='text' name='title' placeholder='Search Games'>
+                        <button class="button is-link is-outlined is-rounded is-small" type='submit'>Search</button>
+                    </form>
+                </div>
+                <div class="navbar-item is-hoverable">
+                </div>
+                <div class="navbar-item is-hoverable">
                     <a class="navbar-color" href='/logout'>Logout</a>
                 </div>
             </div>
-        <% } else { %>
-            <div class="navbar-end">
-                <div class="navbar-item is-hoverable">
-                    <a class="navbar-color" href="/auth/google">Login with Google</a>
+            <% } else { %>
+                <div class="navbar-end">
+                    <div class="navbar-item is-hoverable">
+                        <a class="navbar-color" href="/auth/google">Login with Google</a>
+                    </div>
                 </div>
-            </div>
-        <% } %>
-
+                <% } %>
     </div>
 </nav>
 
