@@ -7,10 +7,20 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
     "debug": "~2.6.9",
+    "depd": "^1.1.2",
+    "dotenv": "^6.0.0",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
+    "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0"
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.7",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "request": "^2.87.0",
+    "socket.io": "^2.1.1"
   }
 }

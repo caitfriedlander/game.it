@@ -1,0 +1,35 @@
+<%- include('../_partials/head') %>
+
+    <h1><%= game.title %></h1>
+    <img src=<%= game.coverImage %>>
+    <p>Platforms: <%= game.platforms %></p>
+    <p><%= game.description %></p>
+    <% console.log(game.gameUsers) %>
+    <% if (game.gameUsers.some( u => u.equals(user.id))) { %>
+        <p>
+            <form action="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">
+                <button class="button is-link is-outlined is-rounded is-small remove" type="submit">Remove Game</button>
+            </form>
+        </p>
+        <% } else { %>
+            <p>
+                <form action="/users/<%= user._id %>/games/<%= game._id %>" method="post">
+                    <button class="button is-link is-outlined is-rounded is-small remove" type="submit">Add To Library</button>
+                </form>
+            </p>
+    <% } %>
+
+    <h2>Players</h2>
+    <% if (game.gameUsers) { %>
+        <%= console.log(game.gameUsers) %>
+        
+        <ul>
+            <% game.gameUsers.forEach(function(user) { %>
+                <li>
+                    <%= user.username %></a> - <small><%= user.platforms %></small>
+                </li> 
+            <% }); %>
+        </ul>
+        <% } %>
+
+<%- include('../_partials/footer') %>
