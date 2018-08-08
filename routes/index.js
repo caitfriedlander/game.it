@@ -2,7 +2,7 @@ var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 var passport = require('passport');
 
-router.get('/', usersCtrl.index);
+router.get('/', usersCtrl.welcome);
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(

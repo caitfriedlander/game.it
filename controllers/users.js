@@ -4,6 +4,7 @@ var passport = require('passport');
 
 module.exports = {
     index,
+    welcome,
     show,
     update,
     edit,
@@ -16,11 +17,19 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
-    console.log(req.user);
+    var users = User.find({}, function (err, users) {
+        res.render('users/index', { user: req.user, users });
+    });
+}
+
+// Welcome
+function welcome(req, res, next) {
     if (req.user && !req.user.username) {
         res.redirect('/users/edit');
     } else {
-        res.render('index', { user: req.user });
+        User.find({}, function (err, users) {
+            res.render('index', { user: req.user});
+        });
     }
 }
 
@@ -112,7 +121,8 @@ function removeLibItem(req, res) {
 
 // Show Library
 function showLibrary(req, res, next) {
-    User.findById(req.params.id).populate('games').exec(function(err, user) {
+    req.user.populate('games', function(err, user) {
+        console.log(req.user)
         if (err) return res.render('users/show');
         res.render('users/library', {user: req.user});
     });
