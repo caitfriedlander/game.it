@@ -9,9 +9,9 @@
                             <h5><%= user.username %></h5>
                     </article>
                     <div class="all-properties">
-                        <h6>Age:&nbsp&nbsp<span><%= user.age %></span></h6><br>
-                        <h6>Gender:&nbsp&nbsp<span><%= user.gender %></span></h6><br>
-                        <h6>Timezone:&nbsp&nbsp<span><%= user.timezone %></span></h6><br>
+                        <h6>Age:&nbsp&nbsp<span><%= user.age %></span></h6>
+                        <h6>Gender:&nbsp&nbsp<span><%= user.gender %></span></h6>
+                        <h6>Timezone:&nbsp&nbsp<span><%= user.timezone %></span></h6>
                         <% if ( user.platforms.length === 0 ) { %>
                             <p>No platforms added yet.</p>
                         <% } else { %>
@@ -22,7 +22,7 @@
                                 <% }) %>
                         </div>
                     </div>
-                <% } %><br>
+                <% } %>
                 <% if (user.id === loggedInUser.id ) { %>
                     <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
                 <% } %>
@@ -39,6 +39,7 @@
                             <img src=<%= game.coverImage %>>
                             <li><%= game.title %></li>
                         </a>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <% if (user.id === loggedInUser.id ) { %>
                             <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
                         <% } %>
