@@ -5,7 +5,7 @@ var passport = require('passport');
 module.exports = {
     index,
     show,
-    create
+    create: findOrCreate
 }
 
 // Index
@@ -30,7 +30,20 @@ function show(req, res, next) {
     });
 }
 
-function create(req, res) {
-    var body = req.body;
-    Chat.create({})
+function findOrCreate(chatroomId) {
+    return new Promise(function(resolve, reject) {
+        Chat.findById({chatroomId}).populate('users').exec(function(err, chatroom) {
+            if (err) return reject(err);
+            if (chatroom) {
+                resolve(chatroom);
+            } else {
+                Chat.create(req.params.user.id).exec((err, chat) => {
+                    Chat.messages.push({content: req.body.content});
+                    chat.save(err => {
+                        res.redirect(`/chats/${user.id}`);
+                    });
+                });
+            }
+        });
+    });
 }
