@@ -5,7 +5,7 @@
     <br>
 
     <h2 id="user-name">
-        <%= user.name %>
+        <%= user.username %>
     </h2>
     <img class="avatar" src="<%= user.avatar %>">
     <br>
@@ -15,48 +15,15 @@
     <br>
     <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button>
     <div class="chat-sidebar">
-        <div class="sidebar-name">
-            <!-- Pass username and display name to register popup -->
-            <a href="javascript:register_popup('milcah', 'Milcah');">
-                <img width="30" height="30" src="<%= user.avatar %>">
-                <span>Milcah</span>
-            </a>
-        </div>
-        <div class="sidebar-name">
-            <a href="javascript:register_popup('eddie', 'Eddie');">
-                <img width="30" height="30" src="<%= user.avatar %>">
-                <span>Eddie</span>
-            </a>
-        </div>
-        <div class="sidebar-name">
-            <a href="javascript:register_popup('mike', 'Mike');">
-                <img width="30" height="30" src="<%= user.avatar %>">
-                <span>Mike</span>
-            </a>
-        </div>
-        <div class="sidebar-name">
-            <a href="javascript:register_popup('cait', 'Cait');">
-                <img width="30" height="30" src="<%= user.avatar %>">
-                <span>Cait</span>
-            </a>
-        </div>
-        <div class="sidebar-name">
-            <a href="javascript:register_popup('user.name', 'user.name');">
-                <img width="30" height="30" src="<%= user.avatar %>">
-                <span>user.name</span>
-            </a>
-        </div>
-        <div class="sidebar-name">
-            <a href="javascript:register_popup('user.name', 'user.name');">
-                <img width="30" height="30" src="<%= user.avatar %>">
-                <span>user.name</span>
-            </a>
-        </div>
-    </div>
 <!-- <% console.log(users) %> -->
-<ul>
-<% users.forEach(function (user) { %>
-    <li><a href="#"><%= user.name %></a></li>
-<% }); %>
-</ul>
+        <div class="sidebar-name"></div>
+            <ul>
+            <% users.forEach(function (user) { %>
+                <li><a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')"><img width="30" height="30" src="<%= user.avatar %>">
+                    <span><%= user.username %></span>
+                </a></li>
+            <% }); %>
+            </ul>
+        </div>
+</div>
 <%- include('../_partials/footer') %>
