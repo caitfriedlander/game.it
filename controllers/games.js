@@ -40,14 +40,12 @@ function searchGames(req, res, next) {
 
 function findOrCreate(apiId) {
     return new Promise(function(resolve, reject) {
-        Game.findOne({apiId}).populate('users').exec(function(err, game) {
+        Game.findOne({apiId}).populate('gameUsers').exec(function(err, game) {
             if (err) return reject(err);
             if (game) {
                 resolve(game);
             } else {
                 gameApi.searchOneGame(apiId).then(gameData => {
-                    console.log("Creating Game:");
-                    console.log(gameData);
                     var game = new Game({
                         apiId,
                         title: gameData.name,
