@@ -49,13 +49,13 @@ h5 {
 }
 
 h6 {
-  font-size: 30px;
+  font-size: 24px;
   color: white;
-  margin: -8px 60px;
+  margin: 0px 60px;
 }
 
 span {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0px 10px;
 }
 
@@ -75,12 +75,8 @@ span {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: white;
-}
-
-a:hover {
-  color: #F6B635 !important;
 }
 
 p, ul {
@@ -90,7 +86,15 @@ p, ul {
 
 li {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+li:hover {
+  color: #F6B635;
+}
+
+.user-lib-prof {
+  display: inline;
 }
 
 .search-form {
@@ -110,6 +114,7 @@ li {
 
 .all-properties {
   display: flex;
+  margin: -115px 0px 5px 170px;
 }
 
 .platform-show {
@@ -121,18 +126,25 @@ li {
   align-items: flex-start;
   display: flex;
   text-align: left;
-  margin: 10px -95px;
+  margin: 20px 0px;
+}
+
+.media2 {
+  align-items: flex-start;
+  display: flex;
+  margin: 50px -83px;
 }
 
 .hero-body {
-  margin: -50px auto;
+  margin: -90px auto;
 }
 
 .hero.is-success {
-    background-color: #F6B635;
-    color: white;
-    border: solid #383F45 2px;
-    margin: 85px 0px 0px;
+  background-color: #F6B635;
+  color: white;
+  border: solid #383F45 2px;
+  padding: 0px 0px 40px 0px;
+  margin: 87px 0px 0px;
 }
 
 /* images */
@@ -143,6 +155,12 @@ li {
   border: solid white 3px;
   border-radius: 80%;
   margin: 10px auto;
+}
+
+.avatar-chat {
+  border: solid white 2px;
+  border-radius: 80%;
+  margin: 5px 20px;
 }
 
 img {
@@ -193,7 +211,7 @@ img {
 
 .button.is-link.is-outlined {
   background-color: transparent;
-  border-color: white;
+  border-color: #F6B635;
   color: white;
   margin: -64px 280px;
   font-weight: normal;
@@ -223,10 +241,26 @@ img {
   color: white;
 }
 
+.button.is-link.is-outlined.results {
+  background-color: transparent;
+  border-color: #F6B635;
+  color: white;
+  margin: -50px 540px;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+}
+
+.button.is-link.is-outlined.results:hover {
+  background-color: #F6B635;
+  border-color: #F6B635;
+  color: white;
+}
+
 .button.is-link.is-outlined.show {
   background-color: transparent;
   border-color: white;
-  margin: -150px 188px;
+  margin: -25px -90px;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
@@ -240,13 +274,43 @@ img {
 .button.is-link.is-outlined.lib {
   background-color: transparent;
   border-color: #F6B635;
-  margin: 10px 0px;
   font-weight: normal;
+  margin: 0px auto;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
 .button.is-link.is-outlined.lib:hover {
+  background-color: #F6B635;
+  border-color: #F6B635;
+  color: white;
+}
+
+.button.is-link.is-outlined.remove {
+  background-color: transparent;
+  border-color: #F6B635;
+  font-weight: normal;
+  margin: 15px auto;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+}
+
+.button.is-link.is-outlined.remove:hover {
+  background-color: #F6B635;
+  border-color: #F6B635;
+  color: white;
+}
+
+.button.is-link.is-outlined.prof {
+  background-color: transparent;
+  border-color: #F6B635;
+  margin: -513px 260px;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+}
+
+.button.is-link.is-outlined.prof:hover {
   background-color: #F6B635;
   border-color: #F6B635;
   color: white;
@@ -275,7 +339,7 @@ img {
 }
 
 .edit-btn:hover {
-  color: #F6B635;
+  color: #F6B635 !important;
 }
 
 .edit-btn2 {
@@ -297,6 +361,18 @@ img {
   font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 34px 15px;
+  border-width: 2px;
+  border-color: #F6B635;
+  color: #404851;
+}
+
+.input.is-info.results, .textarea.is-info {
+  display: flex;
+  max-width: 300px;
+  width: 250px;
+  font-family: 'Lilita One', cursive;
+  font-size: 14px;
+  margin: 20px 280px;
   border-width: 2px;
   border-color: #F6B635;
   color: #404851;
@@ -361,6 +437,11 @@ img {
   }
 }
 
+.chat-name {
+  font-size: 14px;
+  margin: 0px -10px;
+}
+
 .chat-sidebar {
   width: 200px;
   position: fixed;
@@ -369,20 +450,15 @@ img {
   top: 64px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid rgba(29, 49, 91, .3);
   background-color: #F6B635;
 }
 
-.sidebar-name {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 4px;
-  font-size: 12px;
-  color: white;
+.chat-space:hover {
+  background-color: #383F45;
 }
 
-.sidebar-name span {
-  padding-left: 5px;
+.sidebar-name {
+  color: white;
 }
 
 .sidebar-name a {
@@ -392,13 +468,9 @@ img {
   color: inherit;
 }
 
-.sidebar-name:hover {
-  background-color: #363636;
-}
-
 .sidebar-name img {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   vertical-align: middle;
 }
 

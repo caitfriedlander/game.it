@@ -2,7 +2,7 @@
     <section class="hero is-success">
         <div class="hero-body">
             <div class="container">
-                <article class="media">
+                <article class="media2">
                         <figure class="media-left">
                             <img class="avatar" src="<%= user.avatar %>">
                         </figure>
@@ -27,24 +27,21 @@
             </div>
         </div>
     </section>
-    <hr style="color: #383F45">
-    <h1>User Library:</h1>
+    <hr>
+    <h1>User Library</h1>
         <% if (user.games.length) { %>
-            <ul>
-                <% user.games.forEach(function(game){ %>
-                    <li>
-                        
+            <div>
+                <ul class="user-lib-prof">
+                    <% user.games.forEach(function(game){ %>
                         <a href="/games/<%= game.apiId %>">
                             <img src=<%= game.coverImage %>>
-                            <p><%= game.title %></p>
+                            <li><%= game.title %></li>
                         </a>
-                    </li>
                     <br>
                 <% }); %>
-                <li>
-                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/library">Library</a></button>
-                </li>
+                <button class="button is-link is-outlined is-rounded is-small lib" value="Edit Profile"><a class="edit-btn2" href="/users/library">Library</a></button>
             </ul>
+            </div>
         <% } else { %>
             <p>User Hasn't Added Any Games Yet</p>
             <button class="button is-link is-outlined is-rounded is-small lib" value="Edit Profile"><a class="edit-btn2" href="/users/library">Library</a></button>

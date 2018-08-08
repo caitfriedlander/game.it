@@ -1,7 +1,6 @@
 <%- include('../_partials/head') %>
 
-    <h1>game.it</h1>
-    <h2>User Library Page</h2>
+    <h1>User Library Page</h1>
 
     <% if (user.games.length) { %>
         <ul>
@@ -15,12 +14,12 @@
                 <br>
                 <% }); %>
                 <li>
-                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/profile">Profile</a></button>
+                    <button class="button is-link is-outlined is-rounded is-small prof" value="Edit Profile"><a class="edit-btn2" href="/users/profile">Profile</a></button>
                 </li>
             </ul>
             <% } else { %>
                 <p>Search for games to add to your library!</p>
-                <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/profile">Profile</a></button>
+                <button class="button is-link is-outlined is-rounded is-small prof" value="Edit Profile"><a class="edit-btn2" href="/users/profile">Profile</a></button>
     <% } %>
 
 <%- include('../_partials/footer') %>
