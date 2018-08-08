@@ -1,13 +1,7 @@
 <%- include('../_partials/head') %>
     <h1>Chat</h1>
-    <ul id="messages"></ul>
-    <br>
-    <br>
-
-    <h2 id="user-name">
-        <%= user.name %>
-    </h2>
     <img class="avatar" src="<%= user.avatar %>">
+    <p><%= user.username %></p>
     <br>
     <br>
     <textarea class="textarea" id="new-msg" placeholder="Type your message."></textarea>
@@ -15,6 +9,7 @@
     <br>
     <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button>
     <div class="chat-sidebar">
+        <h3>Chat List</h3>
         <div class="sidebar-name">
             <!-- Pass username and display name to register popup -->
             <a href="javascript:register_popup('milcah', 'Milcah');">
