@@ -59,14 +59,6 @@ function show(req, res, next) {
     });
 }
 
-// // Profile
-// function profile(req, res, next) {
-//     User.findById(req.user.id).populate('games').exec(function(err, user) {
-//         if (err) return res.render('users/index');
-//         res.render('users/show', {user: user, loggedInUser: req.user});
-//     });
-// }
-
 // Delete
 function destroy(req, res, next) {
     User.findById(req.params.id, function(err, user) {
