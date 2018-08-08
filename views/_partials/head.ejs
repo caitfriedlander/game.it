@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
-<nav class="navbar is-success is-fixed-top">
+<nav class="navbar is-fixed-top">
     <div class="navbar-brand">
         <a href="/">
             <img class="nav-logo" src="https://i.imgur.com/Kr52iDO.png" alt="game.it: find friends. play games.">
@@ -21,21 +21,19 @@
                     <a class="navbar-color" href="/">Search Games</a>
                     <div class="navbar-item is-hoverable">
                         <a class="navbar-color" href="/chats">Chat</a>
-                        <div class="navbar-item is-hoverable">
-                            <a class="navbar-color" href="/users/profile">Profile</a>
-                        </div>
+                            <div class="navbar-item is-hoverable">
+                                <a class="navbar-color" href="/users/profile">Profile</a>
+                            </div>
                     </div>
                 </div>
             </div>
-
+                <h4>game.it</h4>
             <div class="navbar-end">
-                <div class="navbar-item is-hoverable">
+                <div class="navbar-item">
                     <form class='search-form' action='/games/search' method='GET'>
                         <input class="input is-info" type='text' name='title' placeholder='Search Games'>
                         <button class="button is-link is-outlined is-rounded is-small" type='submit'>Search</button>
                     </form>
-                </div>
-                <div class="navbar-item is-hoverable">
                 </div>
                 <div class="navbar-item is-hoverable">
                     <a class="navbar-color" href='/logout'>Logout</a>

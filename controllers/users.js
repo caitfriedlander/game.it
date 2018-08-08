@@ -7,7 +7,6 @@ module.exports = {
     show,
     update,
     edit,
-    profile,
     delete: destroy,
     newLibItem,
     addLibItem,
@@ -28,17 +27,21 @@ function index(req, res, next) {
 // Update
 function update(req, res, next) {
     var body = req.body;
+    console.log(req.params.username);
     if (!body.platforms) {
         body.platforms = []
     }
-    if (!body.games) {
-        body.games = []
+    if (req.params.username) {
+        User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
+            if (err) return res.status(404).json(err);
+            res.render('users/show', {user});
+        });
+    } else {
+        User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
+            if (err) return res.status(404).json(err);
+            res.render('users/library', {user});
+        });
     }
-    User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
-        if (err) return res.status(404).json(err);
-        res.render('users/show', {user});
-    });
-    // console.log(user);
 }
 
 // Edit
@@ -49,19 +52,20 @@ function edit(req, res, next) {
 
 // Show
 function show(req, res, next) {
-    User.findById(req.params.id).populate('games').exec(function(err, user) {
+    var id = req.params.id || req.user.id;
+    User.findById(id).populate('games').exec(function(err, user) {
         if (err) return res.render('users/index');
-        res.render('users/show', {user: user});
+        res.render('users/show', {user, loggedInUser: req.user});
     });
 }
 
-// Profile
-function profile(req, res, next) {
-    User.findById(req.params.id).populate('games').exec(function(err, user) {
-        if (err) return res.render('users/index');
-        res.render('users/show', {user: req.user});
-    });
-}
+// // Profile
+// function profile(req, res, next) {
+//     User.findById(req.user.id).populate('games').exec(function(err, user) {
+//         if (err) return res.render('users/index');
+//         res.render('users/show', {user: user, loggedInUser: req.user});
+//     });
+// }
 
 // Delete
 function destroy(req, res, next) {
