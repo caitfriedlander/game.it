@@ -5,7 +5,7 @@ var passport = require('passport');
 module.exports = {
     index,
     show,
-    create
+    create: findOrCreate
 }
 
 // Index
@@ -30,7 +30,12 @@ function show(req, res, next) {
     });
 }
 
-function create(req, res) {
-    var body = req.body;
-    Chat.create({})
+function findOrCreate() {
+    return new Promise(function(resolve, reject) {
+        User.findById(req.params.user.id)
+        var body = req.body;
+        Chat.create({})
+    // } else {
+
+    });
 }
