@@ -49,7 +49,7 @@ h4 {
 h5 {
   font-size: 40px;
   color: white;
-  margin: -10px 0px;
+  margin: -7px 0px;
 }
 
 h6 {
@@ -119,7 +119,7 @@ li:hover {
 
 .all-properties {
   display: flex;
-  margin: -115px 0px 15px 170px;
+  margin: -95px 0px 15px 0px;
 }
 
 .platform-show {
@@ -137,11 +137,11 @@ li:hover {
 .media2 {
   align-items: flex-start;
   display: flex;
-  margin: 50px -83px;
+  margin: 55px -83px;
 }
 
 .hero-body {
-  margin: -90px auto;
+  margin: -90px 0px -110px 0px;
 }
 
 .hero.is-success {
@@ -265,7 +265,7 @@ img {
 .button.is-link.is-outlined.show {
   background-color: transparent;
   border-color: white;
-  margin: -10px -90px;
+  margin: -35px -90px;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;

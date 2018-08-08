@@ -39,11 +39,12 @@
                             <img src=<%= game.coverImage %>>
                             <li><%= game.title %></li>
                         </a>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <% if (user.id === loggedInUser.id ) { %>
-                            <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
+                            <div>
+                                <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
+                            </div>
                         <% } %>
-                        </li>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <br>
                 <% }); %>
             </ul>
