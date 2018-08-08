@@ -5,7 +5,6 @@ var passport = require('passport');
 module.exports = {
     index,
     welcome,
-    search,
     show,
     update,
     edit,
@@ -41,21 +40,8 @@ function update(req, res, next) {
     }
     User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
         if (err) return res.status(404).json(err);
-        res.render('users/show', {user});
-    });
-}
-
-// Edit
-function edit(req, res, next) {
-    res.render('users/edit', {user: req.user});
-}
-
-// Search
-function search(req, res, next) {
-    console.log(req.params);    
-    var userResults = User.find({"username": req.params}).exec(function(err, userResults) {
-        if (err) return res.render('users/index');
-        res.render('users/index', { user: req.user, userResults });
+        
+        res.render('users/show', {user, loggedInUser: req.user});
     });
 }
 
@@ -68,6 +54,11 @@ function show(req, res, next) {
     });
 }
 
+// Edit
+function edit(req, res, next) {
+    res.render('users/edit', {user: req.user});
+}
+
 // Delete
 function destroy(req, res, next) {
     User.findById(req.params.id, function(err, user) {
@@ -75,6 +66,8 @@ function destroy(req, res, next) {
         res.redirect('/users');
     });
 }
+
+// Library Functions
 
 // New Library Item
 function newLibItem(req, res) {
