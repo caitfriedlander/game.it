@@ -4,7 +4,20 @@
     <img src=<%= game.coverImage %>>
     <p>Platforms: <%= game.platforms %></p>
     <p><%= game.description %></p>
-
+    <% console.log(game.gameUsers) %>
+    <% if (game.gameUsers.includes(user.id)) { %>
+        <p>
+            <form action="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">
+                <button class="button is-link is-outlined is-rounded is-small show" type="submit">Remove Game</button>
+            </form>
+        </p>
+        <% } else { %>
+            <p>
+                <form action="/users/<%= user._id %>/games/<%= game._id %>" method="post">
+                    <button class="button is-link is-outlined is-rounded is-small show" type="submit">Add To Library</button>
+                </form>
+            </p>
+    <% } %>
     <h2>Players</h2>
     <% if (game.users) { %>
         <ul>
@@ -14,15 +27,6 @@
                 </li> 
             <% }); %>
         </ul>
-        <p>
-            <form action="/users/<%= user._id %>/games/<%= game._id %>" method="post">
-                <button type="submit">Add To Library</button>
-            </form>
-        </p>
-    <% } else { %>
-        <form action="/users/<%= user._id %>/games/<%= game._id %>" method="post">
-            <button type="submit">Add To Library</button>
-        </form>
-    <% } %>
+        <% } %>
 
 <%- include('../_partials/footer') %>

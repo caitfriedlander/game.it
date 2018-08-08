@@ -2,5 +2,28 @@
 
     <h1>game.it</h1>
     <h2>User Library Page</h2>
+    <form class='search-form' action='/games/search' method='GET'>
+        <input class="input is-info search" type='text' name='title' placeholder='Search Games'>
+        <button class="button is-link is-outlined is-rounded is-small search" type='submit'>Search</button>
+    </form>
+    <% if (user.games.length) { %>
+        <ul>
+            <% console.log(user.games) %>
+            <% user.games.forEach(function(game){ %>
+                <li>
+                    <img src=<%= game.coverImage %>>
+                    <p><a href="/games/<%= game.apiId %>"><%= game.title %></a></p>
+                    <small><a href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></small>
+                </li>
+                <br>
+                <% }); %>
+                <li>
+                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/profile">Profile</a></button>
+                </li>
+            </ul>
+            <% } else { %>
+                <p>User Hasn't Added Any Games Yet</p>
+                <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/profile">Profile</a></button>
+    <% } %>
 
 <%- include('../_partials/footer') %>
