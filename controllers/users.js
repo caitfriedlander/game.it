@@ -18,6 +18,7 @@ module.exports = {
 function index(req, res, next) {
     if (err) return next(err);
     var users = User.find({}, function (err, users) {
+        if (err) res.next(err);
         res.render('users/index', { user: req.user, users });
     });
 }
