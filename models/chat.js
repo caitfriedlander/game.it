@@ -9,7 +9,8 @@ var messageSchema = new Schema({
 });
 
 var ChatSchema = new Schema({
-    messageId: [messageSchema],
+    messages: [messageSchema],
+    chatroomId: String,
     users: [{type: Schema.Types.ObjectId, ref: 'User'}]
 }, {
     timestamps: true

@@ -30,12 +30,20 @@ function show(req, res, next) {
     });
 }
 
-function findOrCreate() {
+function findOrCreate(chatroomId) {
     return new Promise(function(resolve, reject) {
-        User.findById(req.params.user.id)
-        var body = req.body;
-        Chat.create({})
-    // } else {
-
+        Chat.findById({chatroomId}).populate('users').exec(function(err, chatroom) {
+            if (err) return reject(err);
+            if (chatroom) {
+                resolve(chatroom);
+            } else {
+                Chat.create(req.params.user.id).exec((err, chat) => {
+                    Chat.messages.push({content: req.body.content});
+                    chat.save(err => {
+                        res.redirect(`/chats/${user.id}`);
+                    });
+                });
+            }
+        });
     });
 }
