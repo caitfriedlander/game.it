@@ -29,12 +29,15 @@
             </div>
         </div>
     </section>
+    
     <hr>
+
     <h1>User Library</h1>
         <% if (user.games.length) { %>
-            <div>
-                <ul class="user-lib-prof">
-                    <% user.games.forEach(function(game){ %>
+        <div class="columns">
+            <ul class="user-lib-prof">
+                <% user.games.forEach(function(game){ %>
+                    <div class="column">
                         <a href="/games/<%= game.apiId %>">
                             <img src=<%= game.coverImage %>>
                             <li><%= game.title %></li>
@@ -45,10 +48,10 @@
                             </div>
                         <% } %>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <br>
-                <% }); %>
-            </ul>
-            </div>
+                    </div> 
+                    <% }); %>
+                </ul>
+        </div>
         <% } else { %>
             <p>User Hasn't Added Any Games Yet</p>
         <% } %>

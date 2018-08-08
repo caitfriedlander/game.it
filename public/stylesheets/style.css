@@ -4,6 +4,7 @@
 
 html {
   background-color: #515B64;
+  transform: scale(1)
 }
 
 body {
@@ -99,6 +100,9 @@ li:hover {
 
 .user-lib-prof {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
   margin: 15px auto;
 }
 
@@ -292,7 +296,7 @@ img {
 }
 
 .rmv-btn-lib {
-  margin: 0px 0px;
+  margin: 10px 0px;
 }
 
 .button.is-link.is-outlined.remove {
