@@ -7,6 +7,7 @@ module.exports = {
     show,
     update,
     edit,
+    profile,
     delete: destroy,
     newLibItem,
     addLibItem,
@@ -52,20 +53,19 @@ function edit(req, res, next) {
 
 // Show
 function show(req, res, next) {
-    var id = req.params.id || req.user.id;
-    User.findById(id).populate('games').exec(function(err, user) {
+    User.findById(req.params.id).populate('games').exec(function(err, user) {
         if (err) return res.render('users/index');
-        res.render('users/show', {user, loggedInUser: req.user});
+        res.render('users/show', {user: user});
     });
 }
 
-// // Profile
-// function profile(req, res, next) {
-//     User.findById(req.user.id).populate('games').exec(function(err, user) {
-//         if (err) return res.render('users/index');
-//         res.render('users/show', {user: user, loggedInUser: req.user});
-//     });
-// }
+// Profile
+function profile(req, res, next) {
+    User.findById(req.params.id).populate('games').exec(function(err, user) {
+        if (err) return res.render('users/index');
+        res.render('users/show', {user: req.user, option: true});
+    });
+}
 
 // Delete
 function destroy(req, res, next) {
