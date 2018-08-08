@@ -5,7 +5,7 @@ var usersCtrl = require('../controllers/users');
 
 router.get('/', isLoggedIn, usersCtrl.index);
 router.get('/', isLoggedIn, usersCtrl.welcome);
-router.get('/library', isLoggedIn, usersCtrl.showLibrary);
+router.get('/', isLoggedIn, usersCtrl.show);
 router.get('/edit', isLoggedIn, usersCtrl.edit)
 router.get('/profile', usersCtrl.show);
 router.get('/:id', usersCtrl.show);
