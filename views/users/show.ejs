@@ -32,9 +32,11 @@
             <ul>
                 <% user.games.forEach(function(game){ %>
                     <li>
-                        <img src=<%= game.coverImage %>>
-                        <p><a href="/games/<%= game.apiId %>"><%= game.title %></a></p>
-                        <small><a href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></small>
+                        
+                        <a href="/games/<%= game.apiId %>">
+                            <img src=<%= game.coverImage %>>
+                            <p><%= game.title %></p>
+                        </a>
                     </li>
                     <br>
                     <% }); %>
