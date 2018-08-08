@@ -10,7 +10,7 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
-    var games = Game.find({}, err, games => {
+    var games = Game.find({}, (err, games) => {
         if (err) return next(err);
         res.render('games/index', { games, user: req.user });
     });
@@ -39,8 +39,8 @@ function searchGames(req, res, next) {
 // Utility Functions
 
 function findOrCreate(apiId) {
-    return new Promise(resolve, reject => {
-        Game.findOne({apiId}).populate('gameUsers').exec(err, game => {
+    return new Promise(function(resolve, reject) {
+        Game.findOne({apiId}).populate('gameUsers').exec(function(err, game) {
             if (err) return reject(err);
             if (game) {
                 resolve(game);
