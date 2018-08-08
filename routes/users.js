@@ -3,7 +3,8 @@ var router = express.Router();
 var passport = require('passport');
 var usersCtrl = require('../controllers/users');
 
-router.get('/', usersCtrl.index);
+router.get('/', isLoggedIn, usersCtrl.index);
+router.get('/', isLoggedIn, usersCtrl.welcome);
 router.get('/library', isLoggedIn, usersCtrl.showLibrary);
 router.get('/edit', isLoggedIn, usersCtrl.edit)
 router.get('/profile', usersCtrl.show);

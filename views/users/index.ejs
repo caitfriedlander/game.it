@@ -2,6 +2,12 @@
 
     <h1>game.it</h1>
     <h2>User Search Page</h2>
+    <% console.log(users) %>
+    <ul>
+        <% users.forEach( function(user) { %>
+            <li><a href="/users/<%= user.id %>"><%= user.username %></a></li>
+        <% }); %>
+    </ul>
     
 
 <%- include('../_partials/footer') %>
