@@ -441,6 +441,12 @@ img {
   }
 }
 
+.chat-box {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
 .chat-name {
   font-size: 14px;
   margin: 0px -10px;
