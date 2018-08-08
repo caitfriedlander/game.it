@@ -5,7 +5,7 @@
     <p>Platforms: <%= game.platforms %></p>
     <p><%= game.description %></p>
     <% console.log(game.gameUsers) %>
-    <% if (game.gameUsers.includes(user.id)) { %>
+    <% if (game.gameUsers.some( u => u.equals(user.id))) { %>
         <p>
             <form action="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">
                 <button class="button is-link is-outlined is-rounded is-small show" type="submit">Remove Game</button>

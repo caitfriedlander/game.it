@@ -1,5 +1,6 @@
 <%- include('../_partials/head') %>
     <h1>Chat</h1>
+
     <ul id="messages"></ul>
     <br>
     <br>
@@ -7,7 +8,9 @@
     <h2 id="user-name">
         <%= user.username %>
     </h2>
+
     <img class="avatar" src="<%= user.avatar %>">
+    <p><%= user.username %></p>
     <br>
     <br>
     <textarea class="textarea" id="new-msg" placeholder="Type your message."></textarea>
@@ -15,7 +18,6 @@
     <br>
     <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button>
     <div class="chat-sidebar">
-<!-- <% console.log(users) %> -->
         <div class="sidebar-name"></div>
             <ul>
             <% users.forEach(function (user) { %>
