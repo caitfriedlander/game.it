@@ -1,16 +1,10 @@
 <%- include('../_partials/head') %>
+    
     <h1>Chat</h1>
 
     <ul id="messages"></ul>
-    <br>
-    <br>
-
-    <h2 id="user-name">
-        <%= user.username %>
-    </h2>
-
-    <img class="avatar" src="<%= user.avatar %>">
-    <p><%= user.username %></p>
+    <h4><%= user.username %></h4>
+        <img class="avatar" src="<%= user.avatar %>">
     <br>
     <br>
     <textarea class="textarea" id="new-msg" placeholder="Type your message."></textarea>
@@ -18,14 +12,21 @@
     <br>
     <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button>
     <div class="chat-sidebar">
-        <div class="sidebar-name"></div>
-            <ul>
+        <div class="sidebar-name">
+            <h2>Chat List</h2>
             <% users.forEach(function (user) { %>
                 <li><a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')"><img width="30" height="30" src="<%= user.avatar %>">
-                    <span><%= user.username %></span>
+                    <form action="/chats/rooms?otherUser=<%= user.id %>" method="POST">
+                        <button type="submit"><%= user.username %></button>
+                    </form>
                 </a></li>
             <% }); %>
             </ul>
         </div>
 </div>
+<div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/chat.js"></script>
 <%- include('../_partials/footer') %>

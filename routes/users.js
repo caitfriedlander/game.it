@@ -5,15 +5,15 @@ var usersCtrl = require('../controllers/users');
 
 router.get('/', isLoggedIn, usersCtrl.index);
 router.get('/', isLoggedIn, usersCtrl.welcome);
-router.get('/library', isLoggedIn, usersCtrl.showLibrary);
+router.get('/', isLoggedIn, usersCtrl.show);
 router.get('/edit', isLoggedIn, usersCtrl.edit)
-router.get('/profile', usersCtrl.show);
-router.get('/:id', usersCtrl.show);
-router.put('/', usersCtrl.update);
-router.delete('/:id', usersCtrl.delete);
-router.get('/:id/games/new', usersCtrl.newLibItem)
-router.post('/:userId/games/:gameId', usersCtrl.addLibItem)
-router.delete('/:userId/games/:gameId', usersCtrl.removeLibItem)
+router.get('/profile', isLoggedIn, usersCtrl.show);
+router.get('/:id', isLoggedIn, usersCtrl.show);
+router.put('/', isLoggedIn, usersCtrl.update);
+router.delete('/:id', isLoggedIn, usersCtrl.delete);
+router.get('/:id/games/new', isLoggedIn, usersCtrl.newLibItem)
+router.post('/:userId/games/:gameId', isLoggedIn, usersCtrl.addLibItem)
+router.delete('/:userId/games/:gameId', isLoggedIn, usersCtrl.removeLibItem)
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

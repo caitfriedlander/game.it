@@ -2,7 +2,7 @@
     <section class="hero is-success">
         <div class="hero-body">
             <div class="container">
-                <article class="media">
+                <article class="media2">
                         <figure class="media-left">
                             <img class="avatar" src="<%= user.avatar %>">
                         </figure>
@@ -23,32 +23,32 @@
                         </div>
                     </div>
                 <% } %><br>
-                <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
-                <button value="Chat"><a href="/chats">Send Message</a></button>
+                <% if (user.id === loggedInUser.id ) { %>
+                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
+                <% } %>
             </div>
         </div>
     </section>
-    <hr style="color: #383F45">
-    <h1>User Library:</h1>
+    <hr>
+    <h1>User Library</h1>
         <% if (user.games.length) { %>
-            <ul>
-                <% user.games.forEach(function(game){ %>
-                    <li>
-                        
+            <div>
+                <ul class="user-lib-prof">
+                    <% user.games.forEach(function(game){ %>
                         <a href="/games/<%= game.apiId %>">
                             <img src=<%= game.coverImage %>>
-                            <p><%= game.title %></p>
+                            <li><%= game.title %></li>
                         </a>
-                    </li>
+                        <% if (user.id === loggedInUser.id ) { %>
+                            <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
+                        <% } %>
+                        </li>
                     <br>
                 <% }); %>
-                <li>
-                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/library">Library</a></button>
-                </li>
             </ul>
+            </div>
         <% } else { %>
             <p>User Hasn't Added Any Games Yet</p>
-            <button class="button is-link is-outlined is-rounded is-small lib" value="Edit Profile"><a class="edit-btn2" href="/users/library">Library</a></button>
         <% } %>
 
 <%- include('../_partials/footer') %>       

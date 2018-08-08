@@ -11,13 +11,14 @@ module.exports = {
     delete: destroy,
     newLibItem,
     addLibItem,
-    removeLibItem,
-    showLibrary
+    removeLibItem
 }
 
 // Index
 function index(req, res, next) {
+    if (err) return next(err);
     var users = User.find({}, function (err, users) {
+        if (err) res.next(err);
         res.render('users/index', { user: req.user, users });
     });
 }
@@ -36,27 +37,19 @@ function welcome(req, res, next) {
 // Update
 function update(req, res, next) {
     var body = req.body;
-    console.log(req.params.username);
     if (!body.platforms) {
         body.platforms = []
     }
-    if (req.params.username) {
-        User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
-            if (err) return res.status(404).json(err);
-            res.render('users/show', {user});
+    User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
+        if (err) return res.status(404).json(err);
+        user.populate('games', function(err) {
+            if (err) return res.render('error', {err});
+            req.user.populate('games', function(err) {
+                if (err) return res.render('error', {err});
+                res.render('users/show', {user, loggedInUser: req.user});
+            });
         });
-    } else {
-        User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
-            if (err) return res.status(404).json(err);
-            res.render('users/library', {user});
-        });
-    }
-}
-
-// Edit
-function edit(req, res, next) {
-    console.log(req.user);
-    res.render('users/edit', {user: req.user});
+    });
 }
 
 // Show
@@ -68,6 +61,11 @@ function show(req, res, next) {
     });
 }
 
+// Edit
+function edit(req, res, next) {
+    res.render('users/edit', {user: req.user});
+}
+
 // Delete
 function destroy(req, res, next) {
     User.findById(req.params.id, function(err, user) {
@@ -75,6 +73,8 @@ function destroy(req, res, next) {
         res.redirect('/users');
     });
 }
+
+// Library Functions
 
 // New Library Item
 function newLibItem(req, res) {
@@ -117,13 +117,4 @@ function removeLibItem(req, res) {
             });
         });
     })
-}
-
-// Show Library
-function showLibrary(req, res, next) {
-    req.user.populate('games', function(err, user) {
-        console.log(req.user)
-        if (err) return res.render('users/show');
-        res.render('users/library', {user: req.user});
-    });
 }
