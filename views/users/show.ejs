@@ -40,7 +40,7 @@
                             <li><%= game.title %></li>
                         </a>
                         <% if (user.id === loggedInUser.id ) { %>
-                            <div>
+                            <div class="rmv-btn-lib">
                                 <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
                             </div>
                         <% } %>

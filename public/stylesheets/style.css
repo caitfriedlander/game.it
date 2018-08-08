@@ -291,6 +291,10 @@ img {
   color: white;
 }
 
+.rmv-btn-lib {
+  margin: 0px 0px;
+}
+
 .button.is-link.is-outlined.remove {
   background-color: transparent;
   border-color: #F6B635;
