@@ -16,6 +16,7 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
+    if (err) return next(err);
     var users = User.find({}, function (err, users) {
         res.render('users/index', { user: req.user, users });
     });
@@ -40,8 +41,13 @@ function update(req, res, next) {
     }
     User.findByIdAndUpdate(req.session.passport.user, body, {new: true}, function(err, user) {
         if (err) return res.status(404).json(err);
-        
-        res.render('users/show', {user, loggedInUser: req.user});
+        user.populate('games', function(err) {
+            if (err) return res.render('error', {err});
+            req.user.populate('games', function(err) {
+                if (err) return res.render('error', {err});
+                res.render('users/show', {user, loggedInUser: req.user});
+            });
+        });
     });
 }
 
