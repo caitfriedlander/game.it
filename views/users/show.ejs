@@ -1,43 +1,40 @@
 <%- include('../_partials/head') %>
-
-    <h1>game.it</h1>
-    <h2><%= user.username %></h2><br>
-        <div id="user-info">
-            <img class="avatar" src="<%= user.avatar %>"><br>
-            <p class="property-titles">Name:</p> 
-            <p><%= user.username %></p><br>
-            <p class="property-titles">Age:</p> 
-            <p><%= user.age %></p><br>
-            <p class="property-titles">Gender:</p> 
-            <p><%= user.gender %></p><br>
-            <p class="property-titles">Timezone:</p> 
-            <p><%= user.timezone %></p><br>            
-            <% if ( user.platforms.length === 0 ) { %>
-                <p>No platforms added yet.</p>
-            <% } else { %>
-                <ul>
-                   <p class="property-titles">Platforms:</p>
-                    <% user.platforms.forEach( function(platform) { %>
-                        <li class="profile-platforms"><%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %></li>
-                    <% }) %>
-                </ul>    
-            <% } %>
-            <br>
-            <% console.log('user.id:') %>
-            <% console.log(user.id) %>
-            <% console.log() %>
-            <% if (user.id === loggedInUser.id) { %>
-                <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
+    <article class="media">
+        <figure class="media-left">
+            <img class="avatar" src="<%= user.avatar %>">
+        </figure>
+            <h5><%= user.username %></h5>
+    </article>
+        <div class="profile-info">
+            <div class="user-info">
+                <h6 class="property-titles">Age:</h6><br>
+                <p class="user-prop"><%= user.age %></p><br>
+                <h6 class="property-titles">Gender:</h6><br>
+                <p class="user-prop"><%= user.gender %></p><br>
+                <h6 class="property-titles">Timezone:</h6><br>
+                <p class="user-prop"><%= user.timezone %></p><br>            
+                <% if ( user.platforms.length === 0 ) { %>
+                    <p>No platforms added yet.</p>
                 <% } else { %>
-            <% } %><br>
+                    <ul>
+                    <h6 class="property-titles">Platforms:</h6>
+                        <% user.platforms.forEach( function(platform) { %>
+                            <li class="profile-platforms"><%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %></li>
+                        <% }) %>
+                    </ul>    
+                <% } %><br>
+                <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
+            </div>
         </div>
-        <hr>
-        <h2>User Library:</h2>
+
+    <hr>
+
+    <h1>User Library:</h1>
         <% if (user.games.length) { %>
             <ul>
                 <% user.games.forEach(function(game){ %>
                     <li>
-                        <h4><a href="/games/<%= game.apiId %>"><%= game.title %></a> - <small><a href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></small></h4>
+                        <h2><a href="/games/<%= game.apiId %>"><%= game.name %></a> - <small><a href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></small></h4>
                     </li> 
                     <% }); %>
                     <li>
@@ -45,7 +42,7 @@
                     </li>
                 </ul>
                 <% } else { %>
-                    <h5>User Hasn't Added Any Games Yet</h5>
+                    <p>User Hasn't Added Any Games Yet</p>
                     <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/library">Library</a></button>
         <% } %>
 
