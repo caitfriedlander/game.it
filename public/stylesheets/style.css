@@ -34,8 +34,7 @@ h5 {
 h6 {
   font-size: 24px;
   color: white;
-  margin: 6px 50px;
-  padding: 10px 0px;
+  margin: -8px 60px;
 }
 
 .label-property, .property-titles {
@@ -51,9 +50,14 @@ a:hover {
   color: #F6B635;
 }
 
-p, ul, li {
+p, ul {
   color: white;
   font-size: 14px;
+}
+
+li {
+  color: white;
+  font-size: 16px;
 }
 
 .search-form {
@@ -72,15 +76,23 @@ p, ul, li {
 
 .profile-info {
   display: flex;
-  padding: 0px 1px;
 }
 
 .user-info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   border: solid white 2px;
   margin: 20px 28px;
   background-color: #F6B635;
+}
+
+.all-properties {
+  margin: 0px 0px;
+}
+
+.platform-show {
+  margin: -15px 50px;
 }
 
 .media {
@@ -180,14 +192,28 @@ img {
 
 .button.is-link.is-outlined.show {
   background-color: transparent;
-  border-color: #F6B635;
-  margin: 43px 20px;
+  border-color: white;
+  margin: 20px 120px;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
 .button.is-link.is-outlined.show:hover {
+  background-color: white;
+  border-color: white;
+}
+
+.button.is-link.is-outlined.lib {
+  background-color: transparent;
+  border-color: #F6B635;
+  margin: 10px 0px;
+  font-weight: normal;
+  font-family: 'Lilita One', cursive;
+  border-width: 2px;
+}
+
+.button.is-link.is-outlined.lib:hover {
   background-color: #F6B635;
   border-color: #F6B635;
   color: white;
@@ -216,6 +242,16 @@ img {
 }
 
 .edit-btn:hover {
+  color: #F6B635;
+}
+
+.edit-btn2 {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+}
+
+.edit-btn2:hover {
   color: white;
 }
 
