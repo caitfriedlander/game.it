@@ -23,7 +23,9 @@
                         </div>
                     </div>
                 <% } %><br>
-                <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
+                <% if (user.id === loggedInUser.id ) { %>
+                    <button class="button is-link is-outlined is-rounded is-small show" value="Edit Profile"><a class="edit-btn" href="/users/edit">Edit Profile</a></button>
+                <% } %>
             </div>
         </div>
     </section>
@@ -38,8 +40,10 @@
                             <img src=<%= game.coverImage %>>
                             <p><%= game.title %></p>
                         </a>
-                        <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
-                    </li>
+                        <% if (user.id === loggedInUser.id ) { %>
+                            <button class="button is-link is-outlined is-rounded is-small lib" value="Remove Game"><a class="edit-btn2" href="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">Remove Game</a></button>
+                        <% } %>
+                        </li>
                     <br>
                 <% }); %>
             </ul>
