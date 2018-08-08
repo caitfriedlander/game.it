@@ -4,7 +4,7 @@ var passport = require('passport');
 var usersCtrl = require('../controllers/users');
 
 router.get('/', usersCtrl.index);
-router.get('/library', isUser, usersCtrl.showLibrary);
+router.get('/library', isLoggedIn, usersCtrl.showLibrary);
 router.get('/edit', isLoggedIn, usersCtrl.edit)
 router.get('/profile', usersCtrl.show);
 router.get('/:id', usersCtrl.show);
@@ -19,9 +19,5 @@ function isLoggedIn(req, res, next) {
   res.redirect('/auth/google');
 }
 
-function isUser(req, res, next) {
-  if ( req.user ) return next();
-  res.redirect('/');
-}
 
 module.exports = router;

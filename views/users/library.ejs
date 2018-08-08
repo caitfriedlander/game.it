@@ -8,7 +8,7 @@
     </form>
     <% if (user.games.length) { %>
         <ul>
-            <% console.log(user.games) %>
+            <%= console.log(user.games) %>
             <% user.games.forEach(function(game){ %>
                 <li>
                     <img src=<%= game.coverImage %>>

@@ -112,7 +112,8 @@ function removeLibItem(req, res) {
 
 // Show Library
 function showLibrary(req, res, next) {
-    User.findById(req.params.id).populate('games').exec(function(err, user) {
+    req.user.populate('games', function(err, user) {
+        console.log(req.user)
         if (err) return res.render('users/show');
         res.render('users/library', {user: req.user});
     });
