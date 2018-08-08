@@ -1,18 +1,16 @@
 <%- include('../_partials/head') %>
-    <article class="media">
-        <figure class="media-left">
-            <img class="avatar" src="<%= user.avatar %>">
-        </figure>
-            <h5><%= user.username %></h5>
-    </article>
+    
         <div class="profile-info">
             <div class="user-info">
-                <h6 class="property-titles">Age:</h6><br>
-                <p class="user-prop"><%= user.age %></p><br>
-                <h6 class="property-titles">Gender:</h6><br>
-                <p class="user-prop"><%= user.gender %></p><br>
-                <h6 class="property-titles">Timezone:</h6><br>
-                <p class="user-prop"><%= user.timezone %></p><br>            
+                <article class="media">
+                        <figure class="media-left">
+                            <img class="avatar" src="<%= user.avatar %>">
+                        </figure>
+                            <h5><%= user.username %></h5>
+                    </article>
+                <h6 class="property-titles">Age:&nbsp&nbsp<%= user.age %></h6><br>
+                <h6 class="property-titles">Gender:&nbsp&nbsp<%= user.gender %></h6><br>
+                <h6 class="property-titles">Timezone:&nbsp&nbsp<%= user.timezone %></h6><br>
                 <% if ( user.platforms.length === 0 ) { %>
                     <p>No platforms added yet.</p>
                 <% } else { %>
