@@ -60,7 +60,7 @@ h4 {
 h5 {
   font-size: 40px;
   color: white;
-  margin: -7px 0px;
+  margin: -7px 5px;
 }
 
 h6 {
@@ -153,11 +153,24 @@ li:hover {
   margin: 20px 0px;
 }
 
+.media-left {
+  margin-right: 0rem;
+  min-width: 70px;
+}
+
 .media2 {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
   margin: 55px -80px;
+}
+
+.hero {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 400px;
 }
 
 .hero-body {
@@ -175,6 +188,11 @@ li:hover {
   margin: 87px 0px 0px;
 }
 
+.card-content {
+  padding: 15px 15px;
+  margin: 10px 15px;
+}
+
 /* images */
 
 .avatar {
@@ -189,6 +207,13 @@ li:hover {
   border: solid white 2px;
   border-radius: 80%;
   margin: 5px 20px;
+}
+
+.avatar-lib {
+  height: 90px;
+  width: 90px;
+  border: solid whitesmoke 2px;
+  box-shadow: 2px 3px 10px #383F45;
 }
 
 img {
@@ -304,7 +329,7 @@ img {
   background-color: transparent;
   border-color: #F6B635;
   font-weight: normal;
-  margin: 0px auto;
+  margin: -15px auto;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
@@ -313,10 +338,6 @@ img {
   background-color: #F6B635;
   border-color: #F6B635;
   color: white;
-}
-
-.rmv-btn-lib {
-  margin: 10px 0px;
 }
 
 .button.is-link.is-outlined.remove {
