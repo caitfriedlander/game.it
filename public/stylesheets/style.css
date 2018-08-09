@@ -618,8 +618,9 @@ img {
 }
 
 .chat-contents{
-  font-size: 10px;
+  font-size: 20px;
   overflow: auto;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .chat-time{
@@ -629,8 +630,8 @@ img {
 }
 
 #chat-avatar{
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
 }
 
 #chat-submit{
@@ -641,5 +642,13 @@ img {
 
 .textarea:not([rows]) {
   min-height: 0px;
+}
+
+#chat-li{
+  width: 100%;
+}
+
+#chat-username{
+  font-size: 30px;
 }
 
