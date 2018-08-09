@@ -4,7 +4,7 @@
     <img src=<%= game.coverImage %>>
     <p>Platforms: <%= game.platforms %></p>
     <p><%= game.description %></p>
-    <% console.log(game.gameUsers) %>
+    <% console.log(platforms) %>
     <% if (game.gameUsers.some( u => u.equals(user.id))) { %>
         <p>
             <form action="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">
@@ -19,7 +19,7 @@
             </p>
     <% } %>
 
-    <h4>Players</h4>
+    <h2>Players</h2>
     <% if (game.gameUsers) { %>
         <%= console.log(game.gameUsers) %>
         

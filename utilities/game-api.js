@@ -1,5 +1,6 @@
 var request = require('request');
 var apiUrl = 'https://api-endpoint.igdb.com/games/';
+var platformUrl = 'https://api-endpoint.igdb.com/platforms/';
 
 module.exports = {
     searchByTitle,

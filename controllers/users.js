@@ -28,7 +28,13 @@ function welcome(req, res, next) {
         res.redirect('/users/edit');
     } else {
         User.find({}, function (err, users) {
-            res.render('index', { user: req.user});
+            Game.find({}, function (err, games) {
+                // games.sort(function (a, b) {
+                //     return a.gameUsers.length - b.gameUsers.length;
+                //   });
+                // games.slice(0,10);
+                res.render('index', { games, user: req.user});
+            }).sort({gameUsers: -1}).limit(10);
         });
     }
 }

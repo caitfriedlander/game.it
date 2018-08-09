@@ -20,7 +20,7 @@ function index(req, res, next) {
 function show(req, res, next) {
     findOrCreate(req.params.apiId)
     .then(game => {
-        res.render('games/show', { user: req.user, game });
+        res.render('games/show', { user: req.user, game, platforms: game.platforms });
     })
     .catch(err => {
         next(err)
@@ -39,8 +39,8 @@ function searchGames(req, res, next) {
 // Utility Functions
 
 function findOrCreate(apiId) {
-    return new Promise(resolve, reject => {
-        Game.findOne({apiId}).populate('gameUsers').exec(err, game => {
+    return new Promise(function(resolve, reject) {
+        Game.findOne({apiId}).populate('gameUsers').exec(function(err, game) {
             if (err) return reject(err);
             if (game) {
                 resolve(game);
@@ -54,7 +54,7 @@ function findOrCreate(apiId) {
                         releaseDate: gameData.first_release_date,
                         coverImage: (gameData.cover && gameData.cover.url) || 'https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg'
                     });
-                    game.save(err => {
+                    game.save(function(err) {
                         if (err) return reject(err);
                         resolve(game);
                     });
@@ -62,4 +62,4 @@ function findOrCreate(apiId) {
             }
         });
     });
-}
+} 
