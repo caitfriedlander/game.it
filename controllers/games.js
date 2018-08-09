@@ -10,7 +10,7 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
-    var games = Game.find({}, err, games => {
+    var games = Game.find({}, (err, games) => {
         if (err) return next(err);
         res.render('games/index', { games, user: req.user });
     });

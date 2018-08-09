@@ -10,7 +10,11 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
+<<<<<<< HEAD
     ChatRoom.find({users: req.user.id}).populate('users').exec(function(err, rooms) {
+=======
+    ChatRoom.find({users: req.user.id}).populate('users').exec((err, rooms) => {
+>>>>>>> 56b28a429f9a60135d11ba454acf7bd875826c83
         if (err) return next(err);
         var existingUsers = rooms.map(r => r.users.find(u => !u.equals(req.user.id)));
         User.find({_id: {$nin: existingUsers}}, function(err, users) {
@@ -27,4 +31,4 @@ function createRoom(req, res) {
     room.save(function(err) {
         res.redirect('/chats');
     });
-}
+} 

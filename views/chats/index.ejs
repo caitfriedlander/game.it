@@ -1,39 +1,50 @@
 <%- include('../_partials/head') %>
-
-    <h1>Chat</h1>
-
     <ul id="messages"></ul>
-    <h4>
-        <%= user.username %>
-    </h4>
-    <img class="avatar" src="<%= user.avatar %>">
-    <br>
-    <br>
-    <textarea class="textarea" id="new-msg" placeholder="Type your message."></textarea>
-    <br>
-    <br>
-    <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button>
+    <h4>Chatroom</h4>
+        <!-- <img class="avatar" src="<%= user.avatar %>"><br><br> -->
+    <!-- <textarea class="textarea" id="new-msg" placeholder="Type your message."></textarea><br><br> -->
+    <!-- <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button> -->
     <div class="chat-sidebar">
         <div class="sidebar-name">
             <h2>Chat List</h2>
-            <% users.forEach(function (user) { %>
-                <li>
-                    <a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')">
-                        <img width="30" height="30" src="<%= user.avatar %>">
+            <ul>
+                <% users.forEach(function (user) { %>
+                    <li><a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')"><img width="30" height="30" src="<%= user.avatar %>">
                         <form action="/chats/rooms?otherUser=<%= user.id %>" method="POST">
-                            <button type="submit">
-                                <%= user.username %>
-                            </button>
+                            <button type="submit"><%= user.username %></button>
                         </form>
-                    </a>
-                </li>
+                    </a></li>
                 <% }); %>
-                    </ul>
+            </ul>
         </div>
-    </div>
-    <div>
-    </div>
+</div>
+    
+<div class="chat-box">
+    <!-- Enter chatroom into this DIV with boxes in each -->
+    <h2>Chat Rooms</h2>
+    <% rooms.forEach(function (room) { %>
+        <div id="room-<%= room.id %>" class="chat-room">
+            <% var otherUserIdx = room.users.findIndex(u => !u._id.equals(user.id)) %>
+            <img width="30" height="30" src="<%= room.users[otherUserIdx].avatar %>">
+            <h4>Messages</h4>
+            <ul>
+                <% room.chats.forEach(function(chat) { %>
+                    <li>
+                        <span><%= chat.createdAt.toLocaleString() %></span>
+                        <span><%= chat.username %></span>
+                        <span><%= chat.message %></span>
+                    </li>
+                <% }); %>
+            </ul>
+            <input>
+            <button onclick="sendChat('<%= room.id %>')">SEND</button>
+        </div>
+    <% }); %>
+</div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/javascripts/chat.js"></script>
-    <%- include('../_partials/footer') %>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var username = '<%= user.username %>';
+</script>
+<script src="/javascripts/chat.js"></script>
+<%- include('../_partials/footer') %>

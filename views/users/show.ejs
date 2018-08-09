@@ -3,12 +3,12 @@
         <div class="hero-body">
             <div class="container">
                 <article class="media2">
-                        <figure class="media-left">
-                            <img class="avatar" src="<%= user.avatar %>">
-                        </figure>
-                            <h5><%= user.username %></h5>
-                    </article>
-                </div>
+                    <figure class="media-left">
+                        <img class="avatar" src="<%= user.avatar %>">
+                    </figure>
+                        <h5><%= user.username %></h5>
+                </article>
+            </div>
                     <div class="all-properties">
                         <h6>Age:&nbsp&nbsp<span><%= user.age %></span></h6>
                         <h6>Gender:&nbsp&nbsp<span><%= user.gender %></span></h6>
@@ -42,7 +42,7 @@
                     <div class="card-content">
                             <div class="content">
                         <a href="/games/<%= game.apiId %>">
-                            <img src=<%= game.coverImage %>>
+                            <img class="avatar-lib" src=<%= game.coverImage %>>
                             <li><%= game.title %></li>
                         </a>
                             </div>
