@@ -31,6 +31,9 @@ function show(req, res, next) {
 function searchGames(req, res, next) {
     gameApi.searchByTitle(req.query.title).then(games => {
         res.render('games/index', {gameData: games, user: req.user});
+    })
+    .catch(err => {
+        next(err)
     });
 }
 

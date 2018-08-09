@@ -28,7 +28,9 @@ function welcome(req, res, next) {
         res.redirect('/users/edit');
     } else {
         User.find({}, function (err, users) {
+            if (err) res.next(err);
             Game.find({}, function (err, games) {
+                if (err) res.next(err);
                 res.render('index', { games, user: req.user});
             }).sort({gameUsers: -1}).limit(10);
         });
@@ -70,6 +72,7 @@ function edit(req, res, next) {
 // Delete
 function destroy(req, res, next) {
     User.findById(req.params.id, function(err, user) {
+        if (err) res.next(err);
         user.remove();
         res.redirect('/users');
     });
@@ -81,6 +84,7 @@ function destroy(req, res, next) {
 function newLibItem(req, res) {
     Game.find({}).where('users').nin([req.params.id]).populate('users')
     .exec(function(err, games) {
+        if (err) res.next(err);
         var user = req.params.id;
         res.render('users/library', {
             games,
@@ -93,9 +97,11 @@ function newLibItem(req, res) {
 // Add Item to Library
 function addLibItem(req, res, next) {
     User.findById(req.params.userId, (err, user) => {
+        if (err) res.next(err);
         user.games.push(req.params.gameId);
         user.save(() => {
             Game.findById(req.params.gameId, (err, game) => {
+                if (err) res.next(err);
                 game.gameUsers.push(req.params.userId);
                 game.save(() => {
                     res.redirect(`/users/${user.id}`);
@@ -108,9 +114,11 @@ function addLibItem(req, res, next) {
 // Remove Item from Library
 function removeLibItem(req, res) {
     User.findById(req.params.userId, (err, user) => {
+        if (err) res.next(err);
         user.games.remove(req.params.gameId);
         user.save(() => {
             Game.findById(req.params.gameId, (err, game) => {
+                if (err) res.next(err);
                 game.gameUsers.remove(req.params.userId);
                 game.save(() => {
                     res.redirect(`/users/${user.id}`);
