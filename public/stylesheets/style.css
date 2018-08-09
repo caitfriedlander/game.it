@@ -102,6 +102,9 @@ p, ul {
 li {
   color: white;
   font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 150px;
 }
 
 li:hover {
@@ -197,6 +200,7 @@ img {
 
 .navbar.is-link {
   display: flex;
+  flex-wrap: wrap;
   margin: 15px auto;
 }
 
