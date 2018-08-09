@@ -518,11 +518,7 @@ img {
   }
 }
 
-.chat-box {
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
-}
+
 
 .chat-name {
   font-size: 14px;
@@ -599,4 +595,29 @@ img {
 .popup-box .popup-messages {
   height: 100%;
   overflow-y: scroll;
+}
+
+.chat-room {
+  width: 400px;
+  margin: 0 auto;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  overflow: scroll;
+  position:   relative;
+}
+
+.chat-contents{
+  font-size: 10px;
+  overflow: auto;
+}
+
+.chat-time{
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 9px;
+}
+
+#chat-avatar{
+  width: 45px;
+  height: 45px;
 }
