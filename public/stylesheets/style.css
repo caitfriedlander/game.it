@@ -254,11 +254,11 @@ img {
 
 /* nav bar */
 
-.navbar.is-link {
+/* .navbar.is-link {
   display: flex;
   flex-wrap: wrap;
   margin: 15px auto;
-}
+} */
 
 .navbar {
   min-height: 4rem;
@@ -273,10 +273,10 @@ img {
   margin: 0px 0px 0px 9px;
 }
 
-.navbar-color {
+/* .navbar-color {
   color: white;
   text-decoration: none;
-}
+} */
 
 .navbar-menu {
   background-color: #383F45;
