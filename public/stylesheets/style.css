@@ -59,7 +59,7 @@ h4 {
 }
 
 .home-header {
-  padding-right: 220px;
+  padding-right: 300px;
 }
 
 h5 {
@@ -87,7 +87,7 @@ span {
 .homepage-partners {
   width: 300px;
   margin: 0 auto;
-  padding: 150px 0px;
+  padding: 0px 0px 50px 0px;
 }
 
 .label-property {
@@ -205,7 +205,6 @@ li:hover {
   color: white;
   border: solid #383F45 2px;
   padding: 140px 0px 50px 0px;
-  margin: 50px 0px;
 }
 
 .card-content {
@@ -238,16 +237,29 @@ li:hover {
   margin: 5px 20px;
 }
 
+.avatar-show {
+  height: 90px;
+  width: 90px;
+  border: solid whitesmoke 2px;
+  box-shadow: 2px 3px 1px #383F45;
+  margin: 10px auto;
+}
+
 .avatar-lib {
   height: 90px;
   width: 90px;
   border: solid whitesmoke 2px;
-  box-shadow: 2px 3px 10px #383F45;
+  box-shadow: 2px 3px 1px #383F45;
   margin: 0px 30px;
 }
 
+.avatar-lib:active {
+  background-color: #383F45;
+  transform: translateY(3px);
+}
+
 .avatar-prof {
-  margin: 65px 5px;
+  margin: 15px 5px;
   position: absolute;
 }
 
@@ -527,8 +539,6 @@ img {
   }
 }
 
-
-
 .chat-name {
   font-size: 14px;
   margin: 0px -10px;
@@ -612,21 +622,21 @@ img {
   border: solid 1px #ccc;
   border-radius: 5px;
   overflow: scroll;
-  position:   relative;
+  position: relative;
 }
 
-.chat-contents{
+.chat-contents {
   font-size: 10px;
   overflow: auto;
 }
 
-.chat-time{
+.chat-time {
   padding-bottom: 5px;
   padding-top: 5px;
   font-size: 9px;
 }
 
-#chat-avatar{
+#chat-avatar {
   width: 45px;
   height: 45px;
 }
