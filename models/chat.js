@@ -16,9 +16,4 @@ var chatRoomSchema = new Schema({
 
 module.exports = mongoose.model('ChatRoom', chatRoomSchema);
 
-//Use id of chatRoom doc as room id in socket.io 
-// ChatRoom.find({users: req.user.id}, function(err,rooms) {
-//     rooms.forEach(function(room){
 
-//    })
-// });
