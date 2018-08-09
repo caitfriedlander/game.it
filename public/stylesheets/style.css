@@ -520,8 +520,6 @@ img {
   }
 }
 
-
-
 .chat-name {
   font-size: 14px;
   margin: 0px -10px;
@@ -600,7 +598,7 @@ img {
 }
 
 .chat-room {
-  width: 200px;
+  width: 300px;
   height: 500px;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -611,17 +609,37 @@ img {
 }
 
 .chat-contents{
-  font-size: 10px;
+  font-size: 20px;
   overflow: auto;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .chat-time{
   padding-bottom: 5px;
   padding-top: 5px;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 #chat-avatar{
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
 }
+
+#chat-submit{
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.textarea:not([rows]) {
+  min-height: 0px;
+}
+
+#chat-li{
+  width: 100%;
+}
+
+#chat-username{
+  font-size: 30px;
+}
+

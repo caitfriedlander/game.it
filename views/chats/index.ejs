@@ -9,11 +9,13 @@
             <h2>Chat List</h2>
             <ul>
                 <% users.forEach(function (user) { %>
-                    <li><a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')"><img width="30" height="30" src="<%= user.avatar %>">
+                    <li>
+                        <a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')"><img width="30" height="30" src="<%= user.avatar %>">
                         <form action="/chats/rooms?otherUser=<%= user.id %>" method="POST">
                             <button type="submit"><%= user.username %></button>
                         </form>
-                    </a></li>
+                        </a>
+                    </li>
                 <% }); %>
             </ul>
         </div>
@@ -25,18 +27,19 @@
     <% rooms.forEach(function (room) { %>
         <div id="room-<%= room.id %>" class="chat-room card">
             <% var otherUserIdx = room.users.findIndex(u => !u._id.equals(user.id)) %>
-            <img width="10" height="10" id="chat-avatar" src="<%= room.users[otherUserIdx].avatar %>">
+            <img id="chat-avatar" src="<%= room.users[otherUserIdx].avatar %>">
+            <h2 id="chat-username"><%= room.users[otherUserIdx].username %></h1>
             <ul>
                 <% room.chats.forEach(function(chat) { %>
-                    <li>
+                    <li id="chat-li">
                         <hr>
                         <span class="chat-contents chat-time"><%= chat.createdAt.toLocaleString() %> </span>
-                        <span class="chat-contents"><%= chat.username %>: &nbsp &nbsp <%= chat.message %></span>
+                        <span class="chat-contents"><strong class="chat-contents"><%= chat.username %></strong>:  &nbsp <%= chat.message %></span>
                     </li>
                 <% }); %>
             </ul>
-            <input>
-            <button onclick="sendChat('<%= room.id %>')">SEND</button>
+            <input class="textarea" id="chat-submit">
+            <button class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
         </div>
     <% }); %>
 </div>
