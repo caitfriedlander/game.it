@@ -10,7 +10,7 @@ module.exports = {
 
 // Index
 function index(req, res, next) {
-    var games = Game.find({}, function(err, games) {
+    var games = Game.find({}, err, games => {
         if (err) return next(err);
         res.render('games/index', { games, user: req.user });
     });
@@ -19,10 +19,10 @@ function index(req, res, next) {
 // Show
 function show(req, res, next) {
     findOrCreate(req.params.apiId)
-    .then(function(game) {
-        res.render('games/show', { user: req.user, game });
+    .then(game => {
+        res.render('games/show', { user: req.user, game, platforms: game.platforms });
     })
-    .catch(function(err) {
+    .catch(err => {
         next(err)
     });
 }
@@ -62,4 +62,4 @@ function findOrCreate(apiId) {
             }
         });
     });
-}
+} 
