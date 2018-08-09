@@ -5,7 +5,8 @@ var passport = require('passport');
 
 module.exports = {
     index,
-    createRoom
+    createRoom,
+    destroyRoom
 }
 
 // Index
@@ -17,6 +18,12 @@ function index(req, res, next) {
             users.splice(users.findIndex(u => u.id === req.user.id), 1);
             res.render('chats/index', { rooms, user: req.user, users });
         })
+    });
+}
+
+function destroyRoom(req, res) {
+    ChatRoom.findByIdAndRemove(req.params.id, function(err, room) {
+        res.redirect('/chats');
     });
 }
 
