@@ -1,31 +1,33 @@
 <%- include('../_partials/head') %>
 
-    <h2>Welcome to game.it, <%= user.username %>!</h2>
+    <h1>Welcome to game.it, <%= user.username %>!</h1>
     <h2>create your profile below</h2>
     <% console.log(user.platforms) %>
-    <img class="avatar" src="<%= user.avatar %>">
-    <form action="/users?_method=PUT" method="POST">
+    <img class="avatar-edit" src="<%= user.avatar %>">
+    <form class="edit-form" action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
         <input class="input is-info edit" type="text" name="username" value=<%= user.username ? user.username : '' %>><br><br>
         <label>Name: </label><br>
         <input class="input is-info edit" type="text" name="name" value=<%= user.name ? user.name : '' %>><br><br>
         <label>Platform: </label><br><br>
-        <label class="label-property">PC (Microsoft Windows)</label>   
-        <input type="checkbox" value="PC (Microsoft Windows)" name="platforms" <%= user.platforms.includes('PC (Microsoft Windows)') ? 'checked = checked' : '' %>><br>
-        <label class="label-property">PlayStation 4</label>
-        <input type="checkbox" value="PlayStation 4" name="platforms" <%= user.platforms.includes('PlayStation 4') ? 'checked = checked' : '' %>><br>
-        <label class="label-property">Xbox One</label>
-        <input type="checkbox" value="Xbox One" name="platforms" <%= user.platforms.includes('Xbox One') ? 'checked = checked' : '' %>><br>
-        <label class="label-property">Linux</label>
-        <input type="checkbox" value="Linux" name="platforms" <%= user.platforms.includes('Linux') ? 'checked = checked' : '' %>><br>
-        <label class="label-property">Mac</label>
-        <input type="checkbox" value="Mac" name="platforms" <%= user.platforms.includes('Mac') ? 'checked = checked' : '' %>><br>
-        <label class="label-property">Nintendo Switch</label>
-        <input type="checkbox" value="Nintendo Switch" name="platforms" <%= user.platforms.includes('Nintendo Switch') ? 'checked = checked' : '' %>> <br>
-        <label class="label-property">PlayStation 3</label>
-        <input type="checkbox" value="PlayStation 3" name="platforms" <%= user.platforms.includes('PlayStation 3') ? 'checked = checked' : '' %>><br>
-        <label class="label-property">Xbox 360</label>
-        <input type="checkbox" value="Xbox 360" name="platforms" <%= user.platforms.includes('Xbox 360') ? 'checked = checked' : '' %>><br>
+            <div class="platform-property">
+                <label class="label-property">PC (Microsoft Windows)</label>   
+                <input type="checkbox" value="PC (Microsoft Windows)" name="platforms" <%= user.platforms.includes('PC (Microsoft Windows)') ? 'checked = checked' : '' %>><br>
+                <label class="label-property">PlayStation 4</label>
+                <input type="checkbox" value="PlayStation 4" name="platforms" <%= user.platforms.includes('PlayStation 4') ? 'checked = checked' : '' %>><br>
+                <label class="label-property">Xbox One</label>
+                <input type="checkbox" value="Xbox One" name="platforms" <%= user.platforms.includes('Xbox One') ? 'checked = checked' : '' %>><br>
+                <label class="label-property">Linux</label>
+                <input type="checkbox" value="Linux" name="platforms" <%= user.platforms.includes('Linux') ? 'checked = checked' : '' %>><br>
+                <label class="label-property">Mac</label>
+                <input type="checkbox" value="Mac" name="platforms" <%= user.platforms.includes('Mac') ? 'checked = checked' : '' %>><br>
+                <label class="label-property">Nintendo Switch</label>
+                <input type="checkbox" value="Nintendo Switch" name="platforms" <%= user.platforms.includes('Nintendo Switch') ? 'checked = checked' : '' %>> <br>
+                <label class="label-property">PlayStation 3</label>
+                <input type="checkbox" value="PlayStation 3" name="platforms" <%= user.platforms.includes('PlayStation 3') ? 'checked = checked' : '' %>><br>
+                <label class="label-property">Xbox 360</label>
+                <input type="checkbox" value="Xbox 360" name="platforms" <%= user.platforms.includes('Xbox 360') ? 'checked = checked' : '' %>><br>
+            </div>
         <br><br>
         <label>Age: </label><br>
         <input class="input is-info edit" type="text" name="age" value=<%= user.age ? user.age : '' %>><br><br>

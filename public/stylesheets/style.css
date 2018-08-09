@@ -1,5 +1,5 @@
 * {
-  font-family: 'Lilita One', cursive;
+  font-family: 'Mandali', sans-serif;
 }
 
 .card {
@@ -92,6 +92,11 @@ span {
 
 .label-property {
   color: white;
+}
+
+.platform-property {
+  text-align: left;
+  line-height: 20px;
 }
 
 a {
@@ -228,7 +233,8 @@ li:hover {
   width: 70px;
   border: solid white 3px;
   border-radius: 80%;
-  margin: 10px auto;
+  display: flex;
+  margin: 15px auto;
 }
 
 .avatar-chat {
@@ -243,6 +249,15 @@ li:hover {
   border: solid whitesmoke 2px;
   box-shadow: 2px 3px 1px #383F45;
   margin: 10px auto;
+}
+
+.avatar-edit {
+  height: 70px;
+  width: 70px;
+  border: solid white 3px;
+  border-radius: 80%;
+  display: flex;
+  margin: 35px auto;
 }
 
 .avatar-lib {
@@ -316,7 +331,6 @@ img {
   color: white;
   margin: -64px 280px;
   font-weight: normal;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -332,7 +346,6 @@ img {
   color: white;
   margin: 0px 110px;
   font-weight: normal;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -348,7 +361,6 @@ img {
   color: white;
   margin: -5px 935px;
   font-weight: normal;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -361,11 +373,11 @@ img {
 .button.is-link.is-outlined.show {
   background-color: transparent;
   border-color: white;
-  margin: 100px 0px;
+  margin: 105px 0px;
   position: absolute;
   font-weight: normal;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
+  padding: 0px 11px;
 }
 
 .button.is-link.is-outlined.show:hover {
@@ -378,7 +390,6 @@ img {
   border-color: #F6B635;
   font-weight: normal;
   margin: -15px auto;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -393,7 +404,6 @@ img {
   border-color: #F6B635;
   font-weight: normal;
   margin: 15px auto;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -408,7 +418,6 @@ img {
   border-color: #F6B635;
   margin: -513px 260px;
   font-weight: normal;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -424,7 +433,6 @@ img {
   color: white;
   margin: 0 auto;
   font-weight: normal;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
 }
 
@@ -460,7 +468,6 @@ img {
   display: flex;
   max-width: 300px;
   width: 250px;
-  font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 34px 15px;
   border-width: 2px;
@@ -472,7 +479,6 @@ img {
   display: flex;
   max-width: 300px;
   width: 250px;
-  font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 20px 845px;
   border-width: 2px;
@@ -484,7 +490,6 @@ img {
   display: flex;
   max-width: 300px;
   width: 250px;
-  font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 34px 15px;
   border-width: 2px;
@@ -495,7 +500,6 @@ img {
 .input.is-info.search, .textarea.is-info {
   display: flex;
   max-width: 400px;
-  font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 20px -45px;
   border-width: 2px;
@@ -507,12 +511,19 @@ img {
 .input.is-info.edit, .textarea.is-info {
   display: flex;
   max-width: 300px;
-  font-family: 'Lilita One', cursive;
   font-size: 14px;
   margin: 0px 0px;
   border-width: 2px;
   border-color: #F6B635;
   color: #404851;
+}
+
+.edit-form {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 12px;
 }
 
 /* live chat */
@@ -524,7 +535,6 @@ img {
   padding: .625em;
   width: 50%;
   resize: vertical;
-  font-family: 'Lilita One', cursive;
   border-width: 2px;
   border-color: #F6B635;
   color: #404851;
@@ -617,12 +627,17 @@ img {
 }
 
 .chat-room {
-  width: 400px;
+  width: 300px;
+  height: 500px;
   margin: 0 auto;
+  margin-bottom: 40px;
   border: solid 1px #ccc;
   border-radius: 5px;
-  overflow: scroll;
+  <<<<<<< HEAD overflow: scroll;
   position: relative;
+  =======overflow-y: scroll;
+  position: relative;
+  >>>>>>>master
 }
 
 .chat-contents {
@@ -639,4 +654,14 @@ img {
 #chat-avatar {
   width: 45px;
   height: 45px;
+}
+
+#chat-submit {
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.textarea:not([rows]) {
+  min-height: 0px;
 }
