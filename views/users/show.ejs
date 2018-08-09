@@ -36,7 +36,6 @@
     <h1>User Library</h1>
         <% if (user.games.length) { %>
             <div class="card">
-                    
             <ul class="user-lib-prof">
                 <% user.games.forEach(function(game){ %>
                     <div class="card-content">
@@ -55,7 +54,7 @@
                     </div> 
                     <% }); %>
                 </ul>
-        </div>
+            </div>
         <% } else { %>
             <p>User Hasn't Added Any Games Yet</p>
         <% } %>
