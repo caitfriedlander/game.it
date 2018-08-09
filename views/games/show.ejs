@@ -3,15 +3,19 @@
     <h1><%= game.title %></h1>
     <img src=<%= game.coverImage %>>
     <p>Platforms:
-        <% if (game.platforms === undefined) { %> 
-            <% game.platforms.forEach(function(platform) { %> 
-                <%= platform !== game.platforms[game.platforms.length -1] ? platform.name + ", " : platform.name %>
-            <% }); %>
-        <% } else { %>
+        <% if (!game.platforms.length) { %> 
             No Platform Information Available
+        <% } else { %>
+            <%= game.platforms.join(', ') %>
         <% } %>
     </p>
-    <p><%= game.description %></p>
+    <p>
+        <% if (!game.description) { %> 
+            No Description Available
+        <% } else { %>
+            <%= game.description %>
+        <% } %>
+    </p>
     <% console.log(platforms) %>
     <% if (game.gameUsers.some( u => u.equals(user.id))) { %>
         <p>
@@ -34,7 +38,9 @@
         <ul>
             <% game.gameUsers.forEach(function(user) { %>
                 <li class="show-user-games">
-                    <a href="/users/<%= user.id %>"><%= user.username %></a> <p><%= user.platforms %></p>
+                    <a href="/users/<%= user.id %>"><%= user.username %></a> <p><% user.platforms.forEach(function(platform) { %> 
+                            <%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %>
+                        <%}) %></p>
                 </li> 
             <% }); %>
         </ul>
