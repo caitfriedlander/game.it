@@ -302,6 +302,15 @@ img {
   color: white;
 }
 
+a.navbar-item {
+  cursor: pointer;
+}
+
+a.navbar-item:hover {
+  background-color: #F6B635;
+  color: white;
+}
+
 .navbar-menu {
   background-color: #383F45;
   padding-left: 7px;
@@ -310,10 +319,6 @@ img {
 
 .navbar-brand {
   background-color: #F6B635;
-}
-
-.navbar-brand:hover {
-  background-color: white;
 }
 
 /* buttons */
