@@ -33,18 +33,23 @@
             <ul>
                 <% room.chats.forEach(function(chat) { %>
                     <li id="chat-li" class="<%= chat.username === user.username ? 'user-chat' : 'guest-chat' %>">
-                        <span class="chat-contents chat-time"><%= chat.createdAt.toLocaleString() %> </span>
+                        <br><br>
+                        <% var dt = chat.createdAt %>
+                        <span class="chat-contents chat-time"><%= `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()} ${dt.getHours() % 12 || 12}:${dt.getMinutes() < 10 ? '0' + dt.getMinutes() : dt.getMinutes()} ${dt.getHours() >= 12 ? 'pm' : 'am'}` %></span>
+
                         <span class="chat-contents"><strong class="chat-contents"><%= chat.username === user.username ? '' : room.users[otherUserIdx].username %></strong>&nbsp <%= chat.message %></span>
                     </li>
                 <% }); %>
             </ul>
-                <input class="textarea" id="chat-submit">
-                <button id="chat-btn"class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
-            </div>
-        <% }); %>
-        </ul>
-    </div>
-</div>
+            <input class="textarea" id="chat-submit">
+            <button id="chat-btn"class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
+            
+            <a class="button is-link is-outlined is-rounded is-small remove" href="/chats/rooms/<%= room.id %>?_method=DELETE">Delete Room</a>
+            
+        </div>
+    <% }); %>
+</div>  
+
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
@@ -52,4 +57,3 @@
 </script>
 <script src="/javascripts/chat.js"></script>
 <%- include('../_partials/footer') %>
-

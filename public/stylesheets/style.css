@@ -614,8 +614,10 @@ a.navbar-item:hover {
 }
 
 .chat-room {
+
   width: 450px;
   height: 300px;
+
   margin: 0 auto;
   margin-bottom: 40px;
   border: solid 2px grey;
@@ -669,10 +671,12 @@ a.navbar-item:hover {
 
 .user-chat {
   text-align: right;
+  margin-left: -100px;
 }
 
 .guest-chat {
   text-align: left;
+
 }
 
 #chat-btn {
