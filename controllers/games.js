@@ -41,19 +41,6 @@ function findOrCreate(apiId) {
         Game.findOne({apiId}).populate('gameUsers').exec(function(err, game) {
             if (err) return reject(err);
             if (game) {
-                // if (typeof game.platforms[0] === Number) {
-                //     gameApi.searchOneGame(apiId).then(gameData => {
-                //         // game.platforms = gameData.platforms
-                //         console.log('platforms');
-                //         console.log(gameData);
-                //     });
-                //     // game.save(function(err) {
-                //     //     if (err) return reject(err);
-                //     //     resolve(game);
-                //     // });
-                //     resolve(game);
-                // } else {
-                // }
                 resolve(game);
             } else {
                 gameApi.searchOneGame(apiId).then(gameData => {
@@ -61,7 +48,7 @@ function findOrCreate(apiId) {
                         apiId,
                         title: gameData.name,
                         description: gameData.summary,
-                        platforms: gameData.platforms,
+                        platforms: gameData.platforms || [],
                         releaseDate: gameData.first_release_date,
                         coverImage: (gameData.cover && gameData.cover.url) || 'https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg'
                     });
