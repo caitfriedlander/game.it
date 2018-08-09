@@ -25,7 +25,7 @@ function searchByTitle(title) {
             });
         });
     } else {
-        var url = `${apiUrl}?search=${title}&fields=*&order=popularity:desc&expand=platforms`;
+        var url = `${apiUrl}?search=${title}&fields=*&order=popularity:desc&expand=platforms&limit=50&scroll=1`;
         return new Promise(function(resolve, reject) {
             request({
                 url: url,
