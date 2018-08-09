@@ -614,13 +614,8 @@ a.navbar-item:hover {
 }
 
 .chat-room {
-<<<<<<< HEAD
-  width: 550px;
-  height: 500px;
-=======
   width: 450px;
   height: 300px;
->>>>>>> master
   margin: 0 auto;
   margin-bottom: 40px;
   border: solid 2px grey;
@@ -690,6 +685,11 @@ a.navbar-item:hover {
   font-weight: normal;
   margin: 20px auto;
   border-width: 2px;
+}
+
+#del-btn {
+  margin: 20px 175px;
+  display: flex;
 }
 
 #chat-btn:hover {
