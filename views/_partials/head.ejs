@@ -30,12 +30,14 @@
           <a class="navbar-item navbar-color" href="/chats">Chat</a>
           <a class="navbar-item navbar-color" href="/users/profile">Profile</a>
           <a class="navbar-item navbar-color" href="/users">Users</a>
-      </div>
-      <div class="navbar-end">
-        <a class="navbar-item navbar-color " href='/logout'>Logout</a>
-        <% } else { %>
-          <a class="navbar-item navbar-color" href="/auth/google">Login with Google</a>
         <% } %>
       </div>
+      <div class="navbar-end">
+        <% if (user) { %>
+          <a class="navbar-item navbar-color " href='/logout'>Logout</a>
+        <% } else { %>
+          <a class="navbar-item navbar-color" href="/auth/google">Login with Google</a>  
+        </div>
+        <% } %>
     </div>
   </nav>
