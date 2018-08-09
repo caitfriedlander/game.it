@@ -1,12 +1,11 @@
 <%- include('../_partials/head') %>
     <ul id="messages"></ul>
-    <h4>Chatroom</h4>
         <!-- <img class="avatar" src="<%= user.avatar %>"><br><br> -->
     <!-- <textarea class="textarea" id="new-msg" placeholder="Type your message."></textarea><br><br> -->
     <!-- <button class="button is-hoverable is-link is-outlined is-rounded is-small edit" id="btn-send-msg" value=" Send Message ">Send Message</button> -->
     <div class="chat-sidebar">
         <div class="sidebar-name">
-            <h2>Chat List</h2>
+            <h2>Friend List</h2>
             <ul>
                 <% users.forEach(function (user) { %>
                     <li>
@@ -23,7 +22,9 @@
     
 <div class="chat-box">
     <!-- Enter chatroom into this DIV with boxes in each -->
-    <h2>Chat Rooms</h2>
+    <h1>Chat Rooms</h1>
+    <div class="card2">
+            <ul class="user-lib-prof2">
     <% rooms.forEach(function (room) { %>
         <div id="room-<%= room.id %>" class="chat-room card">
             <% var otherUserIdx = room.users.findIndex(u => !u._id.equals(user.id)) %>
