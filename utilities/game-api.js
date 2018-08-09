@@ -20,7 +20,8 @@ function searchByTitle(title) {
                 }
              }, function(err, response, body) {
                 var gameData = JSON.parse(body);
-                // console.log(gameData);
+                console.log('Platforms from nothing:');
+                console.log(gameData);
                 resolve(gameData);
             });
         });
@@ -35,7 +36,8 @@ function searchByTitle(title) {
                 }
             }, function(err, response, body) {
                 var gameData = JSON.parse(body);
-                // console.log(gameData);
+                console.log('Platforms from search:');
+                console.log(gameData);
                 resolve(gameData);
             });
         });
