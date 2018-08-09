@@ -425,7 +425,7 @@ a.navbar-item:hover {
 
 .edit-btn {
   text-decoration: none;
-  color: white;
+  color: white !important;
   font-weight: normal;
 }
 
