@@ -598,7 +598,7 @@ img {
 }
 
 .chat-room {
-  width: 300px;
+  width: 625px;
   height: 500px;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -609,7 +609,7 @@ img {
 }
 
 .chat-contents{
-  font-size: 20px;
+  font-size: 15px;
   overflow: auto;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -641,5 +641,6 @@ img {
 
 #chat-username{
   font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
