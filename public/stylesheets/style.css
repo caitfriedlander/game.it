@@ -58,9 +58,9 @@ h4 {
   color: #F6B635;
 }
 
-.home-header {
-  padding-right: 300px;
-}
+/* .home-header {
+  padding-right: 220px;
+} */
 
 h5 {
   font-size: 40px;
@@ -285,12 +285,6 @@ img {
 
 /* nav bar */
 
-.navbar.is-link {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 15px auto;
-}
-
 .navbar {
   min-height: 4rem;
   max-height: 4rem;
@@ -306,7 +300,6 @@ img {
 
 .navbar-color {
   color: white;
-  text-decoration: none;
 }
 
 .navbar-menu {
@@ -633,27 +626,25 @@ img {
   margin-bottom: 40px;
   border: solid 1px #ccc;
   border-radius: 5px;
-  <<<<<<< HEAD overflow: scroll;
+  overflow-y: scroll;
   position: relative;
-  =======overflow-y: scroll;
-  position: relative;
-  >>>>>>>master
 }
 
-.chat-contents {
-  font-size: 10px;
+.chat-contents{
+  font-size: 20px;
   overflow: auto;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .chat-time {
   padding-bottom: 5px;
   padding-top: 5px;
-  font-size: 9px;
+  font-size: 12px;
 }
 
-#chat-avatar {
-  width: 45px;
-  height: 45px;
+#chat-avatar{
+  width: 60px;
+  height: 60px;
 }
 
 #chat-submit {
@@ -665,3 +656,12 @@ img {
 .textarea:not([rows]) {
   min-height: 0px;
 }
+
+#chat-li{
+  width: 100%;
+}
+
+#chat-username{
+  font-size: 30px;
+}
+
