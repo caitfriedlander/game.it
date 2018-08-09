@@ -1,7 +1,11 @@
 <%- include('../_partials/head') %>
 
     <h1>Welcome to game.it, <%= user.username %>!</h1>
-    <h2>create your profile below</h2>
+    <% if ( !user.username ) { %>
+        <h2>create your profile</h2>
+    <% } else { %>
+        <h2>edit your profile</h2>
+    <% } %>
     <% console.log(user.platforms) %>
     <img class="avatar-edit" src="<%= user.avatar %>">
     <form class="edit-form" action="/users?_method=PUT" method="POST">
