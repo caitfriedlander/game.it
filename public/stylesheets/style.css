@@ -625,7 +625,7 @@ a.navbar-item:hover {
 }
 
 .chat-room {
-  width: 300px;
+  width: 625px;
   height: 500px;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -636,7 +636,7 @@ a.navbar-item:hover {
 }
 
 .chat-contents{
-  font-size: 20px;
+  font-size: 15px;
   overflow: auto;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -668,5 +668,6 @@ a.navbar-item:hover {
 
 #chat-username{
   font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
