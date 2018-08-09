@@ -1,7 +1,7 @@
 <%- include('../_partials/head') %>
 
     <h1><%= game.title %></h1>
-    <img src=<%= game.coverImage %>>
+    <img class="avatar-show" src=<%= game.coverImage %>>
     <p>Platforms:
         <% if (!game.platforms.length) { %> 
             No Platform Information Available
