@@ -28,7 +28,9 @@ function welcome(req, res, next) {
         res.redirect('/users/edit');
     } else {
         User.find({}, function (err, users) {
-            res.render('index', { user: req.user});
+            Game.find({}, function (err, games) {
+                res.render('index', { games, user: req.user});
+            }).sort({gameUsers: -1}).limit(10);
         });
     }
 }

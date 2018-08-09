@@ -1,5 +1,6 @@
 var request = require('request');
 var apiUrl = 'https://api-endpoint.igdb.com/games/';
+var platformUrl = 'https://api-endpoint.igdb.com/platforms/';
 
 module.exports = {
     searchByTitle,
@@ -7,7 +8,7 @@ module.exports = {
 };
 
 function searchByTitle(title) {
-    var url = `${apiUrl}?search=${title}&fields=*`;
+    var url = `${apiUrl}?search=${title}&fields=*&expand=platforms`;
     return new Promise(function(resolve, reject) {
         request({
             url: url,

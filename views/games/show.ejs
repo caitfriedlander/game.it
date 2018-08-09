@@ -2,9 +2,13 @@
 
     <h1><%= game.title %></h1>
     <img src=<%= game.coverImage %>>
-    <p>Platforms: <%= game.platforms %></p>
+    <p>Platforms: 
+        <% game.platforms.forEach(function(platform) { %> 
+            <%= platform %>
+        <% }); %>
+    </p>
     <p><%= game.description %></p>
-    <% console.log(game.gameUsers) %>
+    <% console.log(platforms) %>
     <% if (game.gameUsers.some( u => u.equals(user.id))) { %>
         <p>
             <form action="/users/<%= user.id %>/games/<%= game._id %>?_method=DELETE" method="post">

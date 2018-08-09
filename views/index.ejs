@@ -9,6 +9,12 @@
                     <input class="input is-info search" type='text' name='title' placeholder='Search Games'>
                     <button class="button is-link is-outlined is-rounded is-small search" type='submit'>Search</button>
                 </form>
+                <h1>most popular games on game.it</h1>
+                <ol>
+                <% games.forEach( function(game) { %>
+                    <li><a href="/games/<%= game.apiId %>"><%= game.title %></a></li>
+                <% }); %>
+                </ol>
             </div>
         </div>
     </div>
