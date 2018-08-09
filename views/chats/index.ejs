@@ -31,15 +31,15 @@
             <h2 id="chat-username"><%= room.users[otherUserIdx].username %></h1>
             <ul>
                 <% room.chats.forEach(function(chat) { %>
-                    <li id="chat-li">
-                        <hr>
+                    <li id="chat-li" class="<%= chat.username === user.username ? 'user-chat' : 'guest-chat' %>">
+                        <hr id="hidden-hr">
                         <span class="chat-contents chat-time"><%= chat.createdAt.toLocaleString() %> </span>
-                        <span class="chat-contents"><strong class="chat-contents"><%= chat.username %></strong>:  &nbsp <%= chat.message %></span>
+                        <span class="chat-contents"><strong class="chat-contents"><%= chat.username === user.username ? '' : room.users[otherUserIdx].username %></strong>&nbsp <%= chat.message %></span>
                     </li>
                 <% }); %>
             </ul>
             <input class="textarea" id="chat-submit">
-            <button class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
+            <button id="chat-btn"class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
         </div>
     <% }); %>
 </div>
@@ -51,6 +51,3 @@
 <script src="/javascripts/chat.js"></script>
 <%- include('../_partials/footer') %>
 
-
-
-Collapse 
