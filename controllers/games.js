@@ -41,19 +41,17 @@ function findOrCreate(apiId) {
         Game.findOne({apiId}).populate('gameUsers').exec(function(err, game) {
             if (err) return reject(err);
             if (game) {
-                // if (typeof game.platforms[0] === Number) {
-                //     gameApi.searchOneGame(apiId).then(gameData => {
-                //         // game.platforms = gameData.platforms
-                //         console.log('platforms');
-                //         console.log(gameData);
-                //     });
-                //     // game.save(function(err) {
-                //     //     if (err) return reject(err);
-                //     //     resolve(game);
-                //     // });
-                //     resolve(game);
-                // } else {
-                // }
+                if (game.platforms[0] === undefined) {
+                    gameApi.searchOneGame(apiId).then(gameData => {
+                        game.platforms = gameData.platforms
+                    });
+                    game.save(function(err) {
+                        if (err) return reject(err);
+                        resolve(game);
+                    });
+                    resolve(game);
+                } else {
+                }
                 resolve(game);
             } else {
                 gameApi.searchOneGame(apiId).then(gameData => {
