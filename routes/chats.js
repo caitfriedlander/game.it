@@ -3,6 +3,7 @@ var chatsCtrl = require('../controllers/chats');
 
 router.get('/', isLoggedIn, chatsCtrl.index);
 router.post('/rooms', isLoggedIn, chatsCtrl.createRoom);
+router.delete('/rooms/:id', isLoggedIn, chatsCtrl.destroyRoom);
 
 
 function isLoggedIn(req, res, next) {
