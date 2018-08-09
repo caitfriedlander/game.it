@@ -340,7 +340,7 @@ a.navbar-item:hover {
   background-color: transparent;
   border-color: #F6B635;
   color: white;
-  margin: 20 auto;
+  margin: 20px auto;
   font-weight: normal;
   border-width: 2px;
 }
