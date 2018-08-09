@@ -598,7 +598,7 @@ img {
 }
 
 .chat-room {
-  width: 200px;
+  width: 300px;
   height: 500px;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -623,3 +623,14 @@ img {
   width: 45px;
   height: 45px;
 }
+
+#chat-submit{
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.textarea:not([rows]) {
+  min-height: 0px;
+}
+
