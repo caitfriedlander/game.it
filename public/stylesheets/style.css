@@ -2,6 +2,11 @@
   font-family: 'Lilita One', cursive;
 }
 
+.card {
+  background-color: #515B64;
+  box-shadow: 3px 5px 30px #383F45;
+}
+
 html {
   background-color: #515B64;
   transform: scale(1)
@@ -17,6 +22,11 @@ hr {
 
 a:hover {
   color: #F6B635;
+}
+
+.columns {
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -123,7 +133,8 @@ li:hover {
 
 .all-properties {
   display: flex;
-  margin: -95px 0px 15px 0px;
+  flex-wrap: wrap;
+  margin: -95px 0px 15px 70px;
 }
 
 .platform-show {
@@ -135,16 +146,21 @@ li:hover {
   align-items: flex-start;
   display: flex;
   text-align: left;
+  flex-wrap: wrap;
   margin: 20px 0px;
 }
 
 .media2 {
   align-items: flex-start;
   display: flex;
-  margin: 55px -83px;
+  flex-wrap: wrap;
+  margin: 55px -80px;
 }
 
 .hero-body {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
   margin: -90px 0px -110px 0px;
 }
 
@@ -269,7 +285,7 @@ img {
 .button.is-link.is-outlined.show {
   background-color: transparent;
   border-color: white;
-  margin: -35px -90px;
+  margin: -55px -1118px;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
