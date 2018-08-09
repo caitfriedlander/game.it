@@ -36,6 +36,7 @@ a:hover {
 h1 {
   font-size: 32px;
   color: white;
+  text-align: center;
 }
 
 h2, label, strong {
@@ -58,7 +59,7 @@ h4 {
 }
 
 .home-header {
-  padding-right: 160px;
+  padding-right: 220px;
 }
 
 h5 {
@@ -218,6 +219,10 @@ li:hover {
   flex-direction: column;
 }
 
+.content2 {
+  margin: 5px auto;
+}
+
 /* images */
 
 .avatar {
@@ -325,7 +330,7 @@ img {
   background-color: transparent;
   border-color: #F6B635;
   color: white;
-  margin: -50px 540px;
+  margin: -5px 935px;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
   border-width: 2px;
@@ -453,7 +458,7 @@ img {
   width: 250px;
   font-family: 'Lilita One', cursive;
   font-size: 14px;
-  margin: 20px 280px;
+  margin: 20px 845px;
   border-width: 2px;
   border-color: #F6B635;
   color: #404851;

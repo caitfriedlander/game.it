@@ -8,10 +8,10 @@
 <% gameData.forEach(function(game) { %>
     <article class="media">
         <figure class="media-left">
-                <p><img src=<%= game.cover ? game.cover.url : "https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg" %>></p>
+                <p><img class="avatar-lib" src=<%= game.cover ? game.cover.url : "https://images.igdb.com/igdb/image/upload/t_cover_big/nocover_qhhlj6.jpg" %>></p>
         </figure>
             <div class="media-content">
-                <div class="content">
+                <div class="content2">
                     <p><a href="/games/<%= game.id %>"><%= game.name %></a></p>
                     <p><% console.log(game.platforms) %></p>
                     <p><% game.platforms.forEach(function(platform) { %> 
