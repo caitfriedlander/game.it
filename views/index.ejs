@@ -11,6 +11,12 @@
                 </form>
             </div>
         </div>
+        <h2>most popular games on game.it</h2>
+        <ol>
+        <% games.forEach( function(game) { %>
+            <li><%= game.title %></li>
+        <% }); %>
+        </ol>
     </div>
 
 <%- include('./_partials/footer') %>
