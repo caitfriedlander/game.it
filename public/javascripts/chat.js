@@ -5,9 +5,9 @@ socket.on('add-message', function (data) {
   var ul = document.querySelector(`#room-${data.roomId} ul`);
   ul.innerHTML += `
     <li>
-      <span>${new Date(data.createdAt).toLocaleString()}</span>
-      <span>${data.username}</span>
-      <span>${data.message}</span>
+      <hr>
+      <span class="chat-contents chat-time">${new Date(data.createdAt).toLocaleString()}</span>
+      <span class="chat-contents">${data.username} &nbsp; &nbsp; ${data.message}</span>
     </li>
   `;
 });
