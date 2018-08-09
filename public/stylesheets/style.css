@@ -157,7 +157,7 @@ li:hover {
 .all-properties {
   display: flex;
   flex-wrap: wrap;
-  margin: -95px 0px 15px 70px;
+  margin: -90px 0px 0px 90px;
 }
 
 .platform-show {
@@ -182,8 +182,7 @@ li:hover {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
-  min-width: 335px;
-  margin: 55px -80px;
+  margin: 0px 30px;
 }
 
 .hero {
@@ -198,15 +197,15 @@ li:hover {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
-  margin: -90px 0px -110px 0px;
+  margin: -180px 0px -240px 0px;
 }
 
 .hero.is-success {
   background-color: #F6B635;
   color: white;
   border: solid #383F45 2px;
-  padding: 0px 0px 55px 0px;
-  margin: 87px 0px 0px;
+  padding: 140px 0px 50px 0px;
+  margin: 50px 0px;
 }
 
 .card-content {
@@ -245,6 +244,11 @@ li:hover {
   border: solid whitesmoke 2px;
   box-shadow: 2px 3px 10px #383F45;
   margin: 0px 30px;
+}
+
+.avatar-prof {
+  margin: 65px 5px;
+  position: absolute;
 }
 
 img {
@@ -345,7 +349,7 @@ img {
 .button.is-link.is-outlined.show {
   background-color: transparent;
   border-color: white;
-  margin: 150px 0px;
+  margin: 100px 0px;
   position: absolute;
   font-weight: normal;
   font-family: 'Lilita One', cursive;
