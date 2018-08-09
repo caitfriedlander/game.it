@@ -641,7 +641,7 @@ a.navbar-item:hover {
 }
 
 #chat-submit {
-  width: 100%;
+  width: 560px;
   height: 30px;
   margin-top: 15px;
 }
@@ -657,4 +657,18 @@ a.navbar-item:hover {
 #chat-username {
   font-size: 30px;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.user-chat{
+  text-align: right;
+}
+
+.guest-chat{
+text-align: left;
+
+}
+
+#chat-btn {
+  justify-content: right;
+
 }
