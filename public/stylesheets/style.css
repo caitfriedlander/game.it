@@ -598,11 +598,13 @@ img {
 }
 
 .chat-room {
-  width: 400px;
+  width: 200px;
+  height: 500px;
   margin: 0 auto;
+  margin-bottom: 40px;
   border: solid 1px #ccc;
   border-radius: 5px;
-  overflow: scroll;
+  overflow-y: scroll;
   position:   relative;
 }
 
