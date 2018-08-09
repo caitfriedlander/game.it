@@ -1,13 +1,17 @@
 <%- include('../_partials/head') %>
-    <section class="hero is-success">
-        <div class="hero-body">
+
+<div class="avatar-prof">
+    <article class="media2">
+        <figure class="media-left">
+            <img class="avatar" src="<%= user.avatar %>">
+        </figure>
+            <h5><%= user.username %></h5>
+    </article>
+</div>
+
+<section class="hero is-success">
+    <div class="hero-body">
             <div class="container">
-                <article class="media2">
-                    <figure class="media-left">
-                        <img class="avatar" src="<%= user.avatar %>">
-                    </figure>
-                        <h5><%= user.username %></h5>
-                </article>
             </div>
                     <div class="all-properties">
                         <h6>Age:&nbsp&nbsp<span><%= user.age %></span></h6>
@@ -36,7 +40,6 @@
     <h1>User Library</h1>
         <% if (user.games.length) { %>
             <div class="card">
-                    
             <ul class="user-lib-prof">
                 <% user.games.forEach(function(game){ %>
                     <div class="card-content">
@@ -55,7 +58,7 @@
                     </div> 
                     <% }); %>
                 </ul>
-        </div>
+            </div>
         <% } else { %>
             <p>User Hasn't Added Any Games Yet</p>
         <% } %>
