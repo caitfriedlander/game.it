@@ -20,14 +20,11 @@ function index(req, res, next) {
     });
 }
 
-
-
-
 function createRoom(req, res) {
     var room = new ChatRoom({
        users: [req.user.id, req.query.otherUser] 
     });
-    room.save(err => {
+    room.save(function(err) {
         res.redirect('/chats');
     });
 } 

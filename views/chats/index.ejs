@@ -25,14 +25,12 @@
     <% rooms.forEach(function (room) { %>
         <div id="room-<%= room.id %>" class="chat-room">
             <% var otherUserIdx = room.users.findIndex(u => !u._id.equals(user.id)) %>
-            <img width="30" height="30" src="<%= room.users[otherUserIdx].avatar %>">
-            <h4>Messages</h4>
+            <img width="10" height="10" id="chat-avatar" src="<%= room.users[otherUserIdx].avatar %>">
             <ul>
                 <% room.chats.forEach(function(chat) { %>
                     <li>
-                        <span><%= chat.createdAt.toLocaleString() %></span>
-                        <span><%= chat.username %></span>
-                        <span><%= chat.message %></span>
+                        <span class="chat-contents chat-time"><%= chat.createdAt.toLocaleString() %> </span>
+                        <span class="chat-contents"><%= chat.username %>: &nbsp &nbsp <%= chat.message %></span>
                     </li>
                 <% }); %>
             </ul>
@@ -48,3 +46,7 @@
 </script>
 <script src="/javascripts/chat.js"></script>
 <%- include('../_partials/footer') %>
+
+
+
+Collapse 
