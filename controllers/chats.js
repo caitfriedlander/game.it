@@ -30,4 +30,4 @@ function createRoom(req, res) {
     room.save(err => {
         res.redirect('/chats');
     });
-}
+} 
