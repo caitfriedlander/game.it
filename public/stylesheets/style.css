@@ -58,9 +58,9 @@ h4 {
   color: #F6B635;
 }
 
-.home-header {
+/* .home-header {
   padding-right: 220px;
-}
+} */
 
 h5 {
   font-size: 40px;
@@ -258,12 +258,6 @@ img {
 
 /* nav bar */
 
-/* .navbar.is-link {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 15px auto;
-} */
-
 .navbar {
   min-height: 4rem;
   max-height: 4rem;
@@ -277,10 +271,9 @@ img {
   margin: 0px 0px 0px 9px;
 }
 
-/* .navbar-color {
+.navbar-color {
   color: white;
-  text-decoration: none;
-} */
+}
 
 .navbar-menu {
   background-color: #383F45;
