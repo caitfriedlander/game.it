@@ -527,8 +527,6 @@ img {
   }
 }
 
-
-
 .chat-name {
   font-size: 14px;
   margin: 0px -10px;
@@ -626,7 +624,7 @@ img {
 .chat-time{
   padding-bottom: 5px;
   padding-top: 5px;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 #chat-avatar{
