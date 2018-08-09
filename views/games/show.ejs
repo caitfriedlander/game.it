@@ -23,14 +23,14 @@
             </p>
     <% } %>
 
-    <h2>Players</h2>
+    <h1>Players</h1>
     <% if (game.gameUsers) { %>
         <%= console.log(game.gameUsers) %>
         
         <ul>
             <% game.gameUsers.forEach(function(user) { %>
-                <li>
-                    <%= user.username %></a> - <small><%= user.platforms %></small>
+                <li class="show-user-games">
+                    <a href="/users/<%= user.id %>"><%= user.username %></a> <p><%= user.platforms %></p>
                 </li> 
             <% }); %>
         </ul>
