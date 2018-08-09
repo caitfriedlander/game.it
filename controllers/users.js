@@ -29,10 +29,6 @@ function welcome(req, res, next) {
     } else {
         User.find({}, function (err, users) {
             Game.find({}, function (err, games) {
-                // games.sort(function (a, b) {
-                //     return a.gameUsers.length - b.gameUsers.length;
-                //   });
-                // games.slice(0,10);
                 res.render('index', { games, user: req.user});
             }).sort({gameUsers: -1}).limit(10);
         });

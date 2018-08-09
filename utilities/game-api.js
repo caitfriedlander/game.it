@@ -8,7 +8,7 @@ module.exports = {
 };
 
 function searchByTitle(title) {
-    var url = `${apiUrl}?search=${title}&fields=*`;
+    var url = `${apiUrl}?search=${title}&fields=*&expand=platforms`;
     return new Promise(function(resolve, reject) {
         request({
             url: url,
