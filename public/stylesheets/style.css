@@ -614,8 +614,10 @@ a.navbar-item:hover {
 }
 
 .chat-room {
+
   width: 450px;
   height: 300px;
+
   margin: 0 auto;
   margin-bottom: 40px;
   border: solid 2px grey;
