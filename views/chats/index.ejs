@@ -23,12 +23,13 @@
     <!-- Enter chatroom into this DIV with boxes in each -->
     <h2>Chat Rooms</h2>
     <% rooms.forEach(function (room) { %>
-        <div id="room-<%= room.id %>" class="chat-room">
+        <div id="room-<%= room.id %>" class="chat-room card">
             <% var otherUserIdx = room.users.findIndex(u => !u._id.equals(user.id)) %>
             <img width="10" height="10" id="chat-avatar" src="<%= room.users[otherUserIdx].avatar %>">
             <ul>
                 <% room.chats.forEach(function(chat) { %>
                     <li>
+                        <hr>
                         <span class="chat-contents chat-time"><%= chat.createdAt.toLocaleString() %> </span>
                         <span class="chat-contents"><%= chat.username %>: &nbsp &nbsp <%= chat.message %></span>
                     </li>
