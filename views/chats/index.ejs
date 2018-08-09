@@ -35,8 +35,8 @@
                     </li>
                 <% }); %>
             </ul>
-            <input>
-            <button onclick="sendChat('<%= room.id %>')">SEND</button>
+            <input class="textarea" id="chat-submit">
+            <button class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
         </div>
     <% }); %>
 </div>
