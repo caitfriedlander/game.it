@@ -3,9 +3,6 @@
     <h1><%= game.title %></h1>
     <img src=<%= game.coverImage %>>
     <p>Platforms: <%= game.platforms %></p>
-    <% game.platforms.forEach(function(platform) { %>
-
-    <% }) n%>
     <p><%= game.description %></p>
     <% console.log(platforms) %>
     <% if (game.gameUsers.some( u => u.equals(user.id))) { %>
@@ -22,7 +19,7 @@
             </p>
     <% } %>
 
-    <h4>Players</h4>
+    <h2>Players</h2>
     <% if (game.gameUsers) { %>
         <%= console.log(game.gameUsers) %>
         
