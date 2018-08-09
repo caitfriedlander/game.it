@@ -2,13 +2,13 @@
 
     <h1><%= game.title %></h1>
     <img class="avatar-show" src=<%= game.coverImage %>>
-    <p>Platforms:
+    <h4>Platforms:
         <% if (!game.platforms.length) { %> 
             No Platform Information Available
         <% } else { %>
             <%= game.platforms.join(', ') %>
         <% } %>
-    </p>
+    </h4>
     <p>
         <% if (!game.description) { %> 
             No Description Available
