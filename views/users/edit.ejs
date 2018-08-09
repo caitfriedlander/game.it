@@ -6,9 +6,9 @@
     <img class="avatar-edit" src="<%= user.avatar %>">
     <form class="edit-form" action="/users?_method=PUT" method="POST">
         <label>Username: </label><br>
-        <input class="input is-info edit" type="text" name="username" value=<%= user.username ? user.username : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="username" value="<%= user.username ? user.username : '' %>"><br><br>
         <label>Name: </label><br>
-        <input class="input is-info edit" type="text" name="name" value=<%= user.name ? user.name : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="name" value="<%= user.name ? user.name : '' %>"><br><br>
         <label>Platform: </label><br><br>
             <div class="platform-property">
                 <label class="label-property">PC (Microsoft Windows)</label>   
@@ -32,9 +32,9 @@
         <label>Age: </label><br>
         <input class="input is-info edit" type="text" name="age" value=<%= user.age ? user.age : '' %>><br><br>
         <label>Gender: </label><br>
-        <input class="input is-info edit" type="text" name="gender" value=<%= user.gender ? user.gender : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="gender" value="<%= user.gender ? user.gender : '' %>"><br><br>
         <label>Timezone: </label><br>
-        <input class="input is-info edit" type="text" name="timezone" value=<%= user.timezone ? user.timezone : '' %>><br><br>
+        <input class="input is-info edit" type="text" name="timezone" value="<%= user.timezone ? user.timezone : '' %>"><br><br>
         <% if ( !user.username ) { %>
             <button class="button is-link is-outlined is-rounded is-small edit" type='submit' value="Create User">Create Profile</button>
         <% } else { %>

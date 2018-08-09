@@ -32,6 +32,7 @@ function createRoom(req, res) {
        users: [req.user.id, req.query.otherUser] 
     });
     room.save(function(err) {
+        if (err) res.next(err);
         res.redirect('/chats');
     });
 } 

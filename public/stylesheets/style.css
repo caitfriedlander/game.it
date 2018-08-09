@@ -304,8 +304,8 @@ a.navbar-item {
 }
 
 a.navbar-item:hover {
-  background-color: #F6B635;
-  color: white;
+  background-color: #383F45;
+  color: #F6B635;
 }
 
 .navbar-menu {
@@ -332,14 +332,14 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.search:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white;
+  color: white !important;
 }
 
 .button.is-link.is-outlined.results {
   display: flex;
   background-color: transparent;
   border-color: #F6B635;
-  color: white;
+  color: white !important;
   margin: 20px auto;
   font-weight: normal;
   border-width: 2px;
@@ -348,7 +348,7 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.results:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white;
+  color: white !important;
 }
 
 .button.is-link.is-outlined.show {
@@ -377,12 +377,13 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.lib:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white;
+  color: white !important;
 }
 
 .button.is-link.is-outlined.remove {
   background-color: transparent;
   border-color: #F6B635;
+  color: white !important;
   font-weight: normal;
   margin: 15px auto;
   border-width: 2px;
@@ -391,7 +392,7 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.remove:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white;
+  color: white !important;
 }
 
 .button.is-link.is-outlined.prof {
@@ -613,12 +614,15 @@ a.navbar-item:hover {
 }
 
 .chat-room {
-  width: 550px;
-  height: 500px;
+
+  width: 450px;
+  height: 300px;
+
   margin: 0 auto;
   margin-bottom: 40px;
-  border: solid 1px #ccc;
+  border: solid 2px grey;
   border-radius: 5px;
+  background-color: grey;
   overflow-y: scroll;
   position: relative;
 }
@@ -627,6 +631,7 @@ a.navbar-item:hover {
   font-size: 15px;
   overflow: auto;
   font-family: 'Roboto Condensed', sans-serif;
+  padding: 0px 14px;
 }
 
 .chat-time {
@@ -636,14 +641,17 @@ a.navbar-item:hover {
 }
 
 #chat-avatar {
-  width: 60px;
-  height: 60px;
+  height: 70px;
+  width: 70px;
+  border: solid white 3px;
+  border-radius: 80%;
+  margin: 10px 10px;
 }
 
 #chat-submit {
-  width: 560px;
+  width: 400px;
   height: 30px;
-  margin-top: 15px;
+  margin: 20px auto;
 }
 
 .textarea:not([rows]) {
@@ -656,20 +664,47 @@ a.navbar-item:hover {
 
 #chat-username {
   font-size: 30px;
+  position: absolute;
+  margin: -95px 90px;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.user-chat{
+.user-chat {
   text-align: right;
   margin-left: -100px;
 }
 
-.guest-chat{
+.guest-chat {
   text-align: left;
-  padding-left: 85px;
+
 }
 
 #chat-btn {
+  display: flex;
   justify-content: right;
+  background-color: transparent;
+  border-color: #F6B635;
+  color: white !important;
+  font-weight: normal;
+  margin: 20px auto;
+  border-width: 2px;
+}
 
+#chat-btn:hover {
+  background-color: #F6B635;
+  border-color: #F6B635;
+  color: white !important;
+}
+
+.user-lib-prof2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin: 40px auto;
+  justify-content: center;
+}
+
+.chat-box {
+  margin: 0px 200px 0px 0px;
 }
