@@ -318,6 +318,15 @@ a.navbar-item:hover {
   background-color: #F6B635;
 }
 
+#nav-name {
+  text-decoration: none;
+  font-size: 36px;
+  margin: auto;
+  text-align: center;
+  padding-right: 12px;
+  color: #383F45;
+}
+
 /* buttons */
 
 .button.is-link.is-outlined.search {
