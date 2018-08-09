@@ -3,12 +3,12 @@
     <h1><%= game.title %></h1>
     <img src=<%= game.coverImage %>>
     <p>Platforms:
-        <% if (game.platforms === undefined) { %> 
+        <% if (!game.platforms) { %> 
+            No Platform Information Available
+        <% } else { %>
             <% game.platforms.forEach(function(platform) { %> 
                 <%= platform !== game.platforms[game.platforms.length -1] ? platform.name + ", " : platform.name %>
             <% }); %>
-        <% } else { %>
-            No Platform Information Available
         <% } %>
     </p>
     <p><%= game.description %></p>

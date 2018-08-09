@@ -13,7 +13,15 @@
             <div class="media-content">
                 <div class="content2">
                     <p><a href="/games/<%= game.id %>"><%= game.name %></a></p>
-
+                    <% if (!game.platforms) { %> 
+                    <p>No Platform Data Available</p>
+                    <% } else { %>
+                        <p>
+                            <% game.platforms.forEach(function(platform) { %> 
+                                <%= platform !== game.platforms[game.platforms.length -1] ? platform.name + ", " : platform.name %>
+                            <% })%>
+                        </p>
+                    <% } %>
                 </div> 
             </div>
     </article>
