@@ -11,7 +11,7 @@
                     <li>
                         <a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')">
                         <form action="/chats/rooms?otherUser=<%= user.id %>" method="POST">
-                            <button class="button is-link is-outlined chat" type="submit"><%= user.username %></button>
+                            <button type="submit"><%= user.username %></button>
                         </form>
                         </a>
                     </li>
@@ -48,9 +48,9 @@
             <button id="chat-btn"class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
             
             <a id="del-btn" class="button is-link is-outlined is-rounded is-small remove" href="/chats/rooms/<%= room.id %>?_method=DELETE">Delete Room</a>
-            
         </div>
     <% }); %>
+    </div>
 </div>  
 
 <script src="/socket.io/socket.io.js"></script>
