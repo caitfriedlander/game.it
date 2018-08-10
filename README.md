@@ -36,6 +36,5 @@ placeholder text
 
 ### *Build On!*
 
-List additional features here such as:
-
-- placeholder text
+Please refer to our Trello for suggestions on additional features:
+**[game.it Trello] (https://trello.com/b/PXILni5g/gamr-app).**
