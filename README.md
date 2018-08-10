@@ -17,6 +17,7 @@ Matching up schedules with friends to play games can be challenging. game.it all
 - MongoDB
 - Mongoose
 - Bulma
+- Socket.io
 - OAuth
 - IGDB API
 - Trello
