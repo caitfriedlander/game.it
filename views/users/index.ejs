@@ -4,9 +4,12 @@
     <ul>
         <% users.forEach( function(user) { %>
             <li class="all-users">
-                <a href="/users/<%= user.id %>"><img class="avatar-edit" src="<%= user.avatar %>"><%= user.username %></a>
+                <a href="/users/<%= user.id %>">
+                    <img class="avatar-edit" src="<%= user.avatar %>">
+                    <p class="username-show"><%= user.username %></p>
+                </a>
             </li>
-        <% }); %>
-    </ul>    
+            <% }); %>
+    </ul>
 
-<%- include('../_partials/footer') %>
+    <%- include('../_partials/footer') %>

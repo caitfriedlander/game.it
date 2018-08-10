@@ -31,15 +31,14 @@
             </p>
     <% } %>
 
-    <h1>Players</h1>
+    <h3>Players</h3>
     <% if (game.gameUsers) { %>
         <%= console.log(game.gameUsers) %>
-        
-        <ul>
+        <ul class="players-show">
             <% game.gameUsers.forEach(function(user) { %>
                 <li class="show-user-games">
-                    <a href="/users/<%= user.id %>"><h4><%= user.username %></h4></a> 
-                    <p>Playing on: <% user.platforms.forEach(function(platform) { %> 
+                    <a href="/users/<%= user.id %>"><h4 class="user-link"><strong><%= user.username %></strong></h4></a> 
+                    <p class="players-show">Playing on: <% user.platforms.forEach(function(platform) { %> 
                             <%= platform !== user.platforms[user.platforms.length -1] ? platform + ", " : platform %>
                         <%}) %></p>
                 </li> 
