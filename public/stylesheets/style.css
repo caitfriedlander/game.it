@@ -684,7 +684,6 @@ a.navbar-item:hover {
 
 .guest-chat {
   text-align: left;
-
 }
 
 #chat-btn {
@@ -696,6 +695,11 @@ a.navbar-item:hover {
   font-weight: normal;
   margin: 20px auto;
   border-width: 2px;
+}
+
+#del-btn {
+  margin: 20px 175px;
+  display: flex;
 }
 
 #chat-btn:hover {
