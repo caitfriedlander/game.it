@@ -33,10 +33,14 @@
             <ul>
                 <% room.chats.forEach(function(chat) { %>
                     <li id="chat-li" class="<%= chat.username === user.username ? 'user-chat' : 'guest-chat' %>">
-                        <br><br>
+                        <br>
                         <% var dt = chat.createdAt %>
                         <span class="chat-contents chat-time"><%= `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()} ${dt.getHours() % 12 || 12}:${dt.getMinutes() < 10 ? '0' + dt.getMinutes() : dt.getMinutes()} ${dt.getHours() >= 12 ? 'pm' : 'am'}` %></span>
-                        <span class="chat-contents"><strong class="chat-contents"><%= chat.username === user.username ? '' : room.users[otherUserIdx].username %></strong>&nbsp <%= chat.message %></span>
+                        <% if (chat.username === user.username) { %>
+                            <span class="chat-contents"><%= chat.message %>&nbsp &nbsp; <strong><%= chat.username %></strong></span>
+                        <% } else { %>
+                            <span class="chat-contents"><strong><%= chat.username %></strong>&nbsp &nbsp; <%= chat.message %></span>
+                        <% } %>
                     </li>
                 <% }); %>
             </ul>
