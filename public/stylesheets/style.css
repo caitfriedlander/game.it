@@ -359,6 +359,23 @@ a.navbar-item:hover {
   color: white !important;
 }
 
+.button.is-link.is-outlined.chat {
+  display: flex;
+  background-color: transparent;
+  border-color: white;
+  color: white !important;
+  
+  margin: 10px 65px;
+  font-weight: normal;
+  border-width: 2px;
+}
+
+.button.is-link.is-outlined.chat:hover {
+  background-color: white;
+  border-color: white;
+  color: #F6B635 !important;
+}
+
 .button.is-link.is-outlined.show {
   background-color: transparent;
   border-color: white;
@@ -679,7 +696,7 @@ a.navbar-item:hover {
 
 .user-chat {
   text-align: right;
-  margin-left: -100px;
+  margin-left: -20px;
 }
 
 .guest-chat {

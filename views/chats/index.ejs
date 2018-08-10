@@ -11,7 +11,7 @@
                     <li>
                         <a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')">
                         <form action="/chats/rooms?otherUser=<%= user.id %>" method="POST">
-                            <button type="submit"><%= user.username %></button>
+                            <button class="button is-link is-outlined chat" type="submit"><%= user.username %></button>
                         </form>
                         </a>
                     </li>
