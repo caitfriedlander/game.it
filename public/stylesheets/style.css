@@ -9,11 +9,15 @@
 
 html {
   background-color: #515B64;
-  transform: scale(1)
 }
 
 body {
   margin: 70px 30px;
+}
+
+.footer{
+  background-color: #515B64;
+  padding: 5rem 0px 0px 0px;
 }
 
 hr {
@@ -129,6 +133,10 @@ li {
 
 li:hover {
   color: #F6B635;
+}
+
+.profile-platforms:hover {
+  color: white !important;
 }
 
 .user-lib-prof {
