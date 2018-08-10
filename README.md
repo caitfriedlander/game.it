@@ -7,6 +7,8 @@
 
 Matching up schedules with friends to play games can be challenging. game.it allows you to organize your library of games and find friends whose gaming schedule matches yours.
 
+Refer to our **[pitch deck] (https://docs.google.com/presentation/d/1qFdi90fd_jwdA3fpyFWXa1wVl13V30wu9pCUJlc1QaA/edit#slide=id.p).** for more information.
+
 ## Technologies Used
 
 - HTML
@@ -33,9 +35,8 @@ Build your profile, add games to your library, and start making friends.
 ## Next Steps
 ### *Bugs*
 
-placeholder text
+The footer does not stick to the end of the page.
 
 ### *Build On!*
 
-Please refer to our Trello for suggestions on additional features:
-**[game.it Trello] (https://trello.com/b/PXILni5g/gamr-app).**
+Please refer to our **[Trello] (https://trello.com/b/PXILni5g/gamr-app).** for suggestions on additional features.
