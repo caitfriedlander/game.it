@@ -326,6 +326,16 @@ a.navbar-item:hover {
   background-color: #F6B635;
 }
 
+#nav-name {
+  text-decoration: none;
+  font-size: 36px;
+  margin: auto;
+  text-align: center;
+  padding-right: 12px;
+  padding-left: 8px;
+  color: #FFFFFF;
+}
+
 /* buttons */
 
 .button.is-link.is-outlined.search {
@@ -340,14 +350,14 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.search:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white !important;
+  color: white;
 }
 
 .button.is-link.is-outlined.results {
   display: flex;
   background-color: transparent;
   border-color: #F6B635;
-  color: white !important;
+  color: white;
   margin: 20px auto;
   font-weight: normal;
   border-width: 2px;
@@ -356,7 +366,7 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.results:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white !important;
+  color: white;
 }
 
 .button.is-link.is-outlined.show {
@@ -385,13 +395,12 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.lib:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white !important;
+  color: white;
 }
 
 .button.is-link.is-outlined.remove {
   background-color: transparent;
   border-color: #F6B635;
-  color: white !important;
   font-weight: normal;
   margin: 15px auto;
   border-width: 2px;
@@ -400,7 +409,7 @@ a.navbar-item:hover {
 .button.is-link.is-outlined.remove:hover {
   background-color: #F6B635;
   border-color: #F6B635;
-  color: white !important;
+  color: white;
 }
 
 .button.is-link.is-outlined.prof {
@@ -628,9 +637,8 @@ a.navbar-item:hover {
 
   margin: 0 auto;
   margin-bottom: 40px;
-  border: solid 2px grey;
+  border: solid 1px #ccc;
   border-radius: 5px;
-  background-color: grey;
   overflow-y: scroll;
   position: relative;
 }
@@ -639,7 +647,6 @@ a.navbar-item:hover {
   font-size: 15px;
   overflow: auto;
   font-family: 'Roboto Condensed', sans-serif;
-  padding: 0px 14px;
 }
 
 .chat-time {
@@ -649,17 +656,14 @@ a.navbar-item:hover {
 }
 
 #chat-avatar {
-  height: 70px;
-  width: 70px;
-  border: solid white 3px;
-  border-radius: 80%;
-  margin: 10px 10px;
+  width: 60px;
+  height: 60px;
 }
 
 #chat-submit {
-  width: 400px;
+  width: 560px;
   height: 30px;
-  margin: 20px auto;
+  margin-top: 15px;
 }
 
 .textarea:not([rows]) {
@@ -672,12 +676,10 @@ a.navbar-item:hover {
 
 #chat-username {
   font-size: 30px;
-  position: absolute;
-  margin: -95px 90px;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.user-chat {
+.user-chat{
   text-align: right;
   margin-left: -10px;
 }
@@ -687,7 +689,6 @@ a.navbar-item:hover {
 }
 
 #chat-btn {
-  display: flex;
   justify-content: right;
   background-color: transparent;
   border-color: #F6B635;
@@ -715,8 +716,4 @@ a.navbar-item:hover {
   height: 100%;
   margin: 40px auto;
   justify-content: center;
-}
-
-.chat-box {
-  margin: 0px 200px 0px 0px;
 }
