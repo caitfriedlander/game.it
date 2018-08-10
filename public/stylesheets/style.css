@@ -686,10 +686,36 @@ a.navbar-item:hover {
 
 .guest-chat {
   text-align: left;
-
 }
 
 #chat-btn {
   justify-content: right;
+  background-color: transparent;
+  border-color: #F6B635;
+  color: white !important;
+  font-weight: normal;
+  margin: 20px auto;
+  border-width: 2px;
+}
+
+#del-btn {
+  margin: 20px 175px;
+  display: flex;
+}
+
+#chat-btn:hover {
+  background-color: #F6B635;
+  border-color: #F6B635;
+  color: white !important;
+}
+
+.user-lib-prof2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin: 40px auto;
+  justify-content: center;
+}
 
 }

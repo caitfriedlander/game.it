@@ -9,7 +9,7 @@
             <ul>
                 <% users.forEach(function (user) { %>
                     <li>
-                        <a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')"><img width="30" height="30" src="<%= user.avatar %>">
+                        <a href="javascript:register_popup('<%= user.username %>', '<%= user.username %>')">
                         <form action="/chats/rooms?otherUser=<%= user.id %>" method="POST">
                             <button type="submit"><%= user.username %></button>
                         </form>
@@ -36,7 +36,6 @@
                         <br><br>
                         <% var dt = chat.createdAt %>
                         <span class="chat-contents chat-time"><%= `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()} ${dt.getHours() % 12 || 12}:${dt.getMinutes() < 10 ? '0' + dt.getMinutes() : dt.getMinutes()} ${dt.getHours() >= 12 ? 'pm' : 'am'}` %></span>
-
                         <span class="chat-contents"><strong class="chat-contents"><%= chat.username === user.username ? '' : room.users[otherUserIdx].username %></strong>&nbsp <%= chat.message %></span>
                     </li>
                 <% }); %>
@@ -44,12 +43,11 @@
             <input class="textarea" id="chat-submit">
             <button id="chat-btn"class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
             
-            <a class="button is-link is-outlined is-rounded is-small remove" href="/chats/rooms/<%= room.id %>?_method=DELETE">Delete Room</a>
+            <a id="del-btn" class="button is-link is-outlined is-rounded is-small remove" href="/chats/rooms/<%= room.id %>?_method=DELETE">Delete Room</a>
             
         </div>
     <% }); %>
 </div>  
-
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
