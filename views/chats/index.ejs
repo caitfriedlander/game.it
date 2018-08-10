@@ -48,9 +48,9 @@
             <button id="chat-btn"class="button is-small is-outiined" onclick="sendChat('<%= room.id %>')">SEND</button>
             
             <a id="del-btn" class="button is-link is-outlined is-rounded is-small remove" href="/chats/rooms/<%= room.id %>?_method=DELETE">Delete Room</a>
+            
         </div>
     <% }); %>
-    </div>
 </div>  
 
 <script src="/socket.io/socket.io.js"></script>
