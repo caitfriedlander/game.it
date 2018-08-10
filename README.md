@@ -36,6 +36,7 @@ Build your profile, add games to your library, and start making friends.
 ### *Bugs*
 
 The footer does not stick to the end of the page.
+Upon creating a profile, user information must be required.
 
 ### *Build On!*
 
