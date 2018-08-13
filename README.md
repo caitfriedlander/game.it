@@ -24,6 +24,9 @@ Refer to our **[pitch deck] (https://docs.google.com/presentation/d/1qFdi90fd_jw
 - IGDB API
 - Trello
 
+## API Endpoints
+Access our API at https://game-it.herokuapp.com/api/games
+
 ## Getting Started
 
 Go to **[game.it] (https://game-it.herokuapp.com/).**
